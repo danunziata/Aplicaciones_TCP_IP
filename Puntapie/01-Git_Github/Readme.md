@@ -94,6 +94,8 @@ A continuación se presentan algunos conceptos básicos de Git, junto con enlace
 
 
 ## Actividades
+- En el repositorio forkeado carga como issues cada una de las actividades.
+- Agregue un colaborador al resositorio para asignarle la revision.
 
 ### Actividad: Creación de perfil en GitHub
 La creación de un perfil en GitHub te permite mostrar tus proyectos y habilidades de manera atractiva y profesional. A continuación, se detallan los pasos a seguir:
@@ -116,7 +118,7 @@ La actividad consiste en crear un perfil en GitHub y personalizarlo utilizando u
 
 - **Genera el contenido deseado:** Utiliza la herramienta seleccionada para generar el contenido de tu archivo README. Personaliza el diseño, agrega secciones específicas y muestra tus habilidades y proyectos de manera atractiva.
 
-. **Copia y adapta el código generado:** Copia el código generado por la herramienta y pégalo en tu archivo README.md en GitHuby adaptalo a tu necesidad. Esto mejorará la apariencia de tu perfil y resaltará tu trabajo y contribuciones.
+- **Copia y adapta el código generado:** Copia el código generado por la herramienta y pégalo en tu archivo README.md en GitHuby adaptalo a tu necesidad. Esto mejorará la apariencia de tu perfil y resaltará tu trabajo y contribuciones.
 
 
 ### Actividad: Completa y Muestra la Encuesta de Habilidades
