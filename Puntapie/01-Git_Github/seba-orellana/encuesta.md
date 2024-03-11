@@ -7,7 +7,7 @@ Nivel de conocimiento y habilidades en el uso de las siguientes herramientas, ut
 3 = Conocimiento intermedio
 4 = Conocimiento avanzado
 5 = Experto
-
+ 
 **Nombre de usuario de GitHub**: seba-orellana
 **Link profile usuario de GitHub**: https://github.com/seba-orellana/
 **Python**: 4
