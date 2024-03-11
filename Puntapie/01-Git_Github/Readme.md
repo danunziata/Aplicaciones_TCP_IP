@@ -36,13 +36,13 @@ Si deseas obtener más información sobre Git y comenzar a explorar todas sus ca
 ![github flow](assets/git-and-github-workflow.png)
 
 
-Conceptos Básicos de Git
+## Conceptos Básicos de Git
 A continuación se presentan algunos conceptos básicos de Git, junto con enlaces a la documentación oficial para obtener más información:
 
 Git Clone: Clona un repositorio existente en tu máquina local. Documentación # Introducción a Git: Control de versiones y colaboración
 
 
-## Crear una cuenta e iniciar sesión con clave SSH
+### Crear una cuenta e iniciar sesión con clave SSH
 
 1. Crear una cuenta en una plataforma de alojamiento de repositorios, como GitHub o GitLab.
    - GitHub: [https://github.com](https://github.com)
@@ -77,7 +77,7 @@ Git Clone: Clona un repositorio existente en tu máquina local. Documentación #
 
 6. ¡Listo! Ahora puedes iniciar sesión en la plataforma de alojamiento de repositorios utilizando la clave SSH.
 
-## Conceptos Básicos de Git
+### Conceptos Básicos de Git
 
 A continuación se presentan algunos conceptos básicos de Git, junto con enlaces a la documentación oficial para obtener más información:
 
@@ -98,7 +98,8 @@ A continuación se presentan algunos conceptos básicos de Git, junto con enlace
 - Agregue un colaborador al resositorio para asignarle la revision.
 
 ### Actividad: Creación de perfil en GitHub
-La creación de un perfil en GitHub te permite mostrar tus proyectos y habilidades de manera atractiva y profesional. A continuación, se detallan los pasos a seguir:
+La creación de un perfil en GitHub te permite mostrar tus proyectos y habilidades de manera atractiva y profesional. A continuación, se detallan los 
+[setting up your profile in github](https://docs.github.com/en/get-started/start-your-journey/setting-up-your-profile)
 
 #### Resumen
 La actividad consiste en crear un perfil en GitHub y personalizarlo utilizando un generador de README en línea. Esto te permitirá agregar una descripción personalizada, mostrar tus proyectos y resaltar tus contribuciones.
