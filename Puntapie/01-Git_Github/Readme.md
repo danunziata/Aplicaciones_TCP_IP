@@ -98,7 +98,7 @@ A continuación se presentan algunos conceptos básicos de Git, junto con enlace
 - Agregue un colaborador al resositorio para asignarle la revision.
 
 ### Actividad: Creación de perfil en GitHub
-La creación de un perfil en GitHub te permite mostrar tus proyectos y habilidades de manera atractiva y profesional. A continuación, se detallan los 
+La creación de un perfil en GitHub te permite mostrar tus proyectos y habilidades de manera atractiva y profesional. Referencia: 
 [setting up your profile in github](https://docs.github.com/en/get-started/start-your-journey/setting-up-your-profile)
 
 #### Resumen
