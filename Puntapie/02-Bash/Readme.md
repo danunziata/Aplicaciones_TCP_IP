@@ -17,11 +17,11 @@ Para obtener más información sobre Bash y comenzar a explorar todas sus caract
 
 Para realizar las actividades requeridas, sigue la siguiente secuencia:
 
-1- Realizar un Fork del Repositorio:
-2- Crear un Issue con la Actividad Correspondiente:
-3- Realizar la Actividad y Completarla:
-4- Solicitar un Pull Request al Repositorio Principal:
-
+1. Realizar un Fork del Repositorio:
+2. Crear un Issue con la Actividad Correspondiente:
+3. Realizar la Actividad y Completarla:
+4. Pase a revisión la actividad completa a colaborador
+5. Solicitar un Pull Request al Repositorio Principal:
 
 ### Actividad 1: Obtener información del sistema en formato JSON utilizando un script Bash
 
