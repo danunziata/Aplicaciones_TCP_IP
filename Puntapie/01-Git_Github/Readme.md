@@ -95,6 +95,29 @@ A continuación se presentan algunos conceptos básicos de Git, junto con enlace
 
 ## Actividades
 
+### Actividad: Creación de perfil en GitHub
+La creación de un perfil en GitHub te permite mostrar tus proyectos y habilidades de manera atractiva y profesional. A continuación, se detallan los pasos a seguir:
+
+#### Resumen
+La actividad consiste en crear un perfil en GitHub y personalizarlo utilizando un generador de README en línea. Esto te permitirá agregar una descripción personalizada, mostrar tus proyectos y resaltar tus contribuciones.
+
+#### Pasos a seguir
+- **Crea un nuevo repositorio en GitHub:** Inicia sesión en tu cuenta de GitHub y crea un repositorio con el mismo nombre que tu usuario. Asegúrate de configurarlo como público.
+
+- **Inicializa el repositorio con un archivo README.md:** Durante la creación del repositorio, selecciona la opción "Initialize this repository with a README" para crear automáticamente un archivo README.md.
+
+- **Edita el archivo README.md:** Abre el archivo README.md en tu repositorio y agrega una descripción personalizada y cualquier otra información que desees mostrar en tu perfil. Guarda los cambios.
+
+- **Utiliza generadores de README en línea**: Visita uno de los siguientes enlaces: 
+   - [GitHub Profile ReadMe Generator](https://rahuldkjain.github.io/gh-profile-readme-generator/)
+   - [readme.so](https://readme.so/)
+   - [GPRM : GitHub Profile ReadMe Maker](https://gprm.itsvg.in/#google_vignette)
+   - [Github Profilinator](https://profilinator.rishav.dev/)
+
+- **Genera el contenido deseado:** Utiliza la herramienta seleccionada para generar el contenido de tu archivo README. Personaliza el diseño, agrega secciones específicas y muestra tus habilidades y proyectos de manera atractiva.
+
+. **Copia y adapta el código generado:** Copia el código generado por la herramienta y pégalo en tu archivo README.md en GitHuby adaptalo a tu necesidad. Esto mejorará la apariencia de tu perfil y resaltará tu trabajo y contribuciones.
+
 
 ### Actividad: Completa y Muestra la Encuesta de Habilidades
 
@@ -123,6 +146,7 @@ Nivel de conocimiento y habilidades en el uso de las siguientes herramientas, ut
 5 = Experto
 
 **Nombre de usuario de GitHub**: [Nombre de usuario de GitHub del colaborador]
+**Link profile usuario de GitHub**: [link al profile del usuario]
 **Python**: [Valoración del 0 al 5]
 **Bash**: [Valoración del 0 al 5]
 **Git/GitHub**: [Valoración del 0 al 5]
