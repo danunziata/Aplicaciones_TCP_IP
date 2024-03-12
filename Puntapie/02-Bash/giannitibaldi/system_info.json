@@ -1,0 +1,9 @@
+{
+   'sistema_operativo': 'Ubuntu 22.04.3 LTS',
+   'kernel': '6.5.0-15-generic',
+   'cpu': 'AMD Ryzen 7 4700U',
+   'memoria_total': '15336',
+   'espacio_disco': '128G',
+   'version_bash': '5.1.16(1)-release',
+   'version_python': 'Python 3.10.12'
+}
