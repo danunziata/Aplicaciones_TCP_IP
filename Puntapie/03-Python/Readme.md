@@ -9,10 +9,10 @@ El scripting se refiere a la capacidad de escribir scripts, que son programas pe
 
 Algunas de las ventajas de utilizar Python para la automatización y scripting son:
 
-Sintaxis legible: Python tiene una sintaxis clara y fácil de entender, lo que facilita la escritura y el mantenimiento del código.
-Amplia biblioteca estándar: Python cuenta con una amplia biblioteca estándar que proporciona módulos y funciones para realizar una variedad de tareas, lo que acelera el desarrollo de scripts.
-Compatibilidad multiplataforma: Python se puede ejecutar en diferentes sistemas operativos, lo que permite que los scripts sean portables y funcionen en diferentes entornos.
-Integración con otros lenguajes: Python se puede combinar fácilmente con otros lenguajes de programación, lo que permite aprovechar el código existente y utilizar las fortalezas de cada lenguaje.
+- **Sintaxis legible:** Python tiene una sintaxis clara y fácil de entender, lo que facilita la escritura y el mantenimiento del código.
+- **Amplia biblioteca estándar:** Python cuenta con una amplia biblioteca estándar que proporciona módulos y funciones para realizar una variedad de tareas, lo que acelera el desarrollo de scripts.
+**Compatibilidad multiplataforma:** Python se puede ejecutar en diferentes sistemas operativos, lo que permite que los scripts sean portables y funcionen en diferentes entornos.
+**Integración con otros lenguajes:** Python se puede combinar fácilmente con otros lenguajes de programación, lo que permite aprovechar el código existente y utilizar las fortalezas de cada lenguaje.
 
 Puedes encontrar la documentación oficial de Python en el siguiente enlace: [Documentación oficial de Python](https://www.python.org/)
 
@@ -57,11 +57,10 @@ Como desarrollador, necesito automatizar la creación de una estructura de archi
 ## Módulo 2 - Programación Orientada a Objetos
 - Tema 1 - Clases y objetos
 - Tema 2 - Herencia y polimorfismo
-
----------------------------------------------------
+```
 **Salida: Estructura de archivos de  referencia**
 
-``shell
+```shell
 Curso de Programación Avanzada/
 ├── Módulo 1 - Introducción/
 │   ├── Tema 1 - Conceptos fundamentales/
@@ -78,9 +77,9 @@ Curso de Programación Avanzada/
         └── nombredeltema.md
         └── assets/
 ```
----------------------------------------------------
 
 **Template de referencia para los temas**
+
 ```markdown 
 # Título del Tema
 
@@ -102,3 +101,5 @@ Aquí puedes hacer un resumen o conclusión del tema.
 
 ## Actividad
 ´´´
+
+
