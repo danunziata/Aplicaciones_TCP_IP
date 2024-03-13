@@ -3,12 +3,13 @@
 # Función para verificar el estado de un sitio web específico
 check_single_website() {
     local url="${1:-http://example.com}"  # URL predeterminada si no se proporciona una específica
-    local status_code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+    local timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    local status_code=$(curl -s -o /dev/null -w "%{http_code}" "$url") #Curl trae todo el contenido html que un servidor tiene. Luego con lo otro filtramos.
     
     if [ "$status_code" -eq 200 ]; then
-        echo "$url is UP!"
+        echo "$timestamp - $url - $status_code - UP!"
     else
-        echo "$url is DOWN"
+        echo "$timestamp - $url - $status_code - DOWN"
     fi
 }
 
