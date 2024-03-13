@@ -45,7 +45,7 @@ Como desarrollador, necesito automatizar la creación de una estructura de archi
 ```
 
 --------------------------------------------------
-**Entrada: Archivo maekdown de referencia**
+**Entrada: Archivo markdown de referencia**
 
 ```markdown 
 # Curso de Programación Avanzada
@@ -80,7 +80,7 @@ Curso de Programación Avanzada/
 ```
 ---------------------------------------------------
 
-*`*Template de referencia para los temas**
+**Template de referencia para los temas**
 ```markdown 
 # Título del Tema
 
@@ -101,5 +101,4 @@ Aquí puedes desarrollar el contenido del tema en detalle.
 Aquí puedes hacer un resumen o conclusión del tema.
 
 ## Actividad
-
-Aquí puedes proponer una actividad relacionada con el tema para que los estudiantes la realicen.
+´´´
