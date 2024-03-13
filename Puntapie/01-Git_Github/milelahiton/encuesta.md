@@ -9,7 +9,7 @@ Nivel de conocimiento y habilidades en el uso de las siguientes herramientas, ut
 5 = Experto
 
 **Nombre de usuario de GitHub**: milelahiton
-**Link profile usuario de GitHub**: [link al profile del usuario]
+**Link profile usuario de GitHub**:https://github.com/milelahiton
 **Python**: 2
 **Bash**: 2
 **Git/GitHub**: 2
