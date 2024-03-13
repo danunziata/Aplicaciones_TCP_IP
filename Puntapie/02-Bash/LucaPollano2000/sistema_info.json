@@ -1,0 +1,9 @@
+{
+    "sistema_operativo": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.15.0-100-generic",
+    "cpu": "",
+    "memoria_total": "3,7Gi",
+    "espacio_disco": "102G",
+    "version_bash": "5.0.17(1)-release",
+    "version_python": "3.8.10"
+}
