@@ -11,8 +11,8 @@ Algunas de las ventajas de utilizar Python para la automatización y scripting s
 
 - **Sintaxis legible:** Python tiene una sintaxis clara y fácil de entender, lo que facilita la escritura y el mantenimiento del código.
 - **Amplia biblioteca estándar:** Python cuenta con una amplia biblioteca estándar que proporciona módulos y funciones para realizar una variedad de tareas, lo que acelera el desarrollo de scripts.
-**Compatibilidad multiplataforma:** Python se puede ejecutar en diferentes sistemas operativos, lo que permite que los scripts sean portables y funcionen en diferentes entornos.
-**Integración con otros lenguajes:** Python se puede combinar fácilmente con otros lenguajes de programación, lo que permite aprovechar el código existente y utilizar las fortalezas de cada lenguaje.
+- **Compatibilidad multiplataforma:** Python se puede ejecutar en diferentes sistemas operativos, lo que permite que los scripts sean portables y funcionen en diferentes entornos.
+- **Integración con otros lenguajes:** Python se puede combinar fácilmente con otros lenguajes de programación, lo que permite aprovechar el código existente y utilizar las fortalezas de cada lenguaje.
 
 Puedes encontrar la documentación oficial de Python en el siguiente enlace: [Documentación oficial de Python](https://www.python.org/)
 
