@@ -100,6 +100,5 @@ Aquí puedes desarrollar el contenido del tema en detalle.
 Aquí puedes hacer un resumen o conclusión del tema.
 
 ## Actividad
-´´´
-
+```
 
