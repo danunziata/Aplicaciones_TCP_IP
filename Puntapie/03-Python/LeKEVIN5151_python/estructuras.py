@@ -44,8 +44,12 @@ def create_course_structure(course_structure):
             with open(template_file, 'r', encoding='utf-8') as template:
                 template_content = template.read()
 
-            # Guardar el archivo de tema
-            topic_md_file = os.path.join(topic_path, 'nombredeltema.md')
+            # Reemplazar el título del tema en el archivo de template
+            template_content = template_content.replace(
+                "# Título del Tema", f"# {topic_name}")
+
+            # Guardar el archivo de tema con el nombre correcto
+            topic_md_file = os.path.join(topic_path, f'{topic_name}.md')
             with open(topic_md_file, 'w', encoding='utf-8') as topic_md:
                 topic_md.write(template_content)
 
