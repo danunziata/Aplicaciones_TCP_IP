@@ -31,31 +31,14 @@ def parse_markdown_file(file_path):
                 current_topic = line.replace('<h3>', '').replace('</h3>', '').strip()
                 # Se inicializa la estructura del tema
                 structure[current_module][current_topic] = {
-                    "files": [],  # Archivos asociados al tema
                     "sections": {  # Secciones del tema
-                        "Resumen": [],
-                        "Introducción": [],
-                        "Desarrollo": [],
-                        "Cierre": [],
+                        "Resumen": ["Aquí puedes proporcionar un resumen breve del tema."],
+                        "Introducción": ["Aquí puedes introducir el tema y proporcionar contexto o información relevante."],
+                        "Desarrollo": ["Aquí puedes desarrollar el contenido del tema en detalle."],
+                        "Cierre": ["Aquí puedes hacer un resumen o conclusión del tema."],
                         "Actividad": []
                     }
                 }
-            # Se verifica si la línea corresponde al título de una sección
-            elif line.startswith('<h4>'):
-                section_title = line.replace('<h4>', '').replace('</h4>', '').strip()
-                # Se inicializa la lista de contenido de la sección
-                structure[current_module][current_topic]["sections"][section_title] = []
-            # Se verifica si la línea corresponde al contenido de una sección o a un archivo asociado al tema
-            elif line.startswith('<p>'):
-                # Si se está procesando dentro de un tema, se agrega el contenido a la sección correspondiente
-                if current_topic:
-                    structure[current_module][current_topic]["files"].append(
-                        line.replace('<p>', '').replace('</p>', '').strip())
-                # Si se está procesando dentro de una sección, se agrega el contenido a dicha sección
-                elif section_title:
-                    structure[current_module][current_topic]["sections"][section_title].append(
-                        line.replace('<p>', '').replace('</p>', '').strip())
-
         return structure
 
 
@@ -83,9 +66,6 @@ def create_folder_structure(structure):
                         topic_file.write(f"## {section}\n\n")
                         for line in content:
                             topic_file.write(f"{line}\n\n")
-
-                for file_name in details['files']:
-                    shutil.copy(file_name, topic_path)
 
 def main(markdown_file):
     # Se analiza el archivo Markdown y se obtiene la estructura
