@@ -10,6 +10,8 @@ Existen diferentes herramientas para el prototipado de aplicaciones web con Pyth
 
 **web:** https://reflex.dev/
 
+![reflex](assets/reflex.png)
+
 Reflex es una herramienta para construir aplicaciones web en Python de forma rápida y sencilla. Permite desarrollar aplicaciones completas utilizando solo Python, eliminando la necesidad de cambiar entre diferentes lenguajes y frameworks. Reflex utiliza una estructura basada en clases donde el estado de la aplicación se representa como una clase y las actualizaciones del estado se realizan mediante métodos en la clase. La interfaz de usuario se refleja directamente desde el estado de la aplicación.
 
 Reflex ofrece una amplia biblioteca de más de 60 componentes de interfaz de usuario preconstruidos, que van desde botones simples hasta gráficos y tablas complejas. Estos componentes son completamente personalizables, lo que permite adaptar los colores, fuentes y estilos para que coincidan con el proyecto. También es posible crear componentes personalizados envolviendo componentes de React existentes.
@@ -23,6 +25,8 @@ Reflex cuenta con una comunidad de desarrolladores en crecimiento, con miles de 
 ## [Streamlit](https://streamlit.io/)
 
 **web:** https://streamlit.io/
+
+![reflex](assets/streamlit.svg)
 
 Streamlit es una herramienta que permite convertir scripts de datos en aplicaciones web compartibles de forma rápida y sencilla. Con Streamlit, es posible construir aplicaciones web interactivas y visualmente atractivas utilizando solo Python, sin necesidad de experiencia previa en desarrollo front-end.
 
