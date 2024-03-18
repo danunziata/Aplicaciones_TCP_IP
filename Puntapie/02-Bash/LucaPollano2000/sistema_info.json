@@ -1,7 +1,7 @@
 {
     "sistema_operativo": "Ubuntu 20.04.6 LTS",
     "kernel": "5.15.0-100-generic",
-    "cpu": "",
+    "cpu": "Intel(R) Pentium(R) CPU N3540 @ 2.16GHz",
     "memoria_total": "3,7Gi",
     "espacio_disco": "102G",
     "version_bash": "5.0.17(1)-release",
