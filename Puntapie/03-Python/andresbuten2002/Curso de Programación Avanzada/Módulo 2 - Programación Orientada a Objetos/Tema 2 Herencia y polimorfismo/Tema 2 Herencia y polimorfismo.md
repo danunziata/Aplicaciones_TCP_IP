@@ -1,4 +1,4 @@
-# Título del Tema
+# Tema 2 Herencia y polimorfismo
 
 ## Resumen
 
