@@ -3,7 +3,7 @@
 # Recopilación de información del sistema
 sistema_operativo=$(lsb_release -d | awk -F"\t" '{print $2}')
 kernel=$(uname -r)
-cpu=$(lscpu | grep "Model name" | awk -F":" '{print $2}' | xargs)
+cpu=$(lscpu | grep "Nombre del modelo" | awk -F":" '{print $2}' | xargs)
 memoria_total=$(free -h | awk '/Mem/{print $2}')
 espacio_disco=$(df -h / | awk 'NR==2{print $2}')
 version_bash=$(bash --version | awk 'NR==1{print $4}')
