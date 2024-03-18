@@ -29,3 +29,37 @@ Una vez que se desarrolla la aplicación en Streamlit, es posible compartirla, a
 Streamlit también cuenta con una comunidad activa de usuarios, con recursos como documentación, foros y bibliotecas adicionales desarrolladas por la comunidad.
 
 Tanto  Reflex como Streamlit son herramientas poderosas para el prototipado de aplicaciones web con Python. Reflex permite el desarrollo completo de aplicaciones web utilizando solo Python, con una amplia gama de componentes de interfaz de usuario preconstruidos y una integración simplificada del backend. Por otro lado, Streamlit se centra en convertir scripts de datos en aplicaciones web interactivas, con una API simple y un proceso de despliegue instantáneo. Ambas herramientas ofrecen una forma rápida y efectiva de crear prototipos de aplicaciones web utilizando Python.
+
+
+## Actividades
+
+### Historia de usuario 1: Investigación y prototipado con Reflex
+
+Como estudiante, quiero aprender sobre el framework Reflex y crear un prototipo de una aplicación web utilizando este framework, para familiarizarme con su funcionamiento y capacidades. Además, quiero asegurarme de que el proyecto esté configurado con un entorno virtual y tenga un README que explique cómo ponerlo en marcha, y que el prototipo esté dockerizado para facilitar su despliegue.
+
+#### Tareas:
+
+- Investigar y estudiar la documentación de Reflex para comprender su estructura y características.
+- En una carpeta con el nombre de usuario de github cree la estructura de su proyecto.
+- Configurar un entorno virtual en el repositorio para aislar las dependencias del proyecto.
+- Crear un archivo README que proporcione instrucciones claras sobre cómo instalar y ejecutar el prototipo de la aplicación utilizando Reflex.
+- Desarrollar un ejemplo básico de una aplicación web utilizando Reflex, aprovechando los componentes preconstruidos y personalizables.
+- Dockerizar el prototipo de la aplicación para facilitar su despliegue y asegurarse de que todas las dependencias estén correctamente configuradas.
+- Actualizar el README con instrucciones detalladas sobre cómo ejecutar el prototipo de la aplicación dockerizado.
+
+### Historia de usuario 2: Investigación y prototipado con Streamlit
+
+Como estudiante, deseo explorar el framework Streamlit y crear un prototipo de una aplicación web utilizando este framework para comprender su funcionalidad y capacidad de desarrollo rápido. Además, quiero asegurarme de que el proyecto esté configurado con un entorno virtual y tenga un README que explique cómo ponerlo en marcha, y que el prototipo esté dockerizado para facilitar su despliegue.
+
+#### Tareas:
+
+- Investigar y estudiar la documentación de Streamlit para comprender su enfoque en el scripting y las capacidades de desarrollo rápido.
+- En una carpeta con el nombre de usuario de github cree la estructura de su proyecto.
+- Configurar un entorno virtual en el repositorio para aislar las dependencias del proyecto.
+- Crear un archivo README que proporcione instrucciones claras sobre cómo instalar y ejecutar el prototipo de la aplicación utilizando Streamlit.
+- Desarrollar un ejemplo básico de una aplicación web utilizando Streamlit, utilizando las capacidades de scripting y los widgets de interacción.
+- Dockerizar el prototipo de la aplicación para facilitar su despliegue y asegurarse de que todas las dependencias estén correctamente configuradas.
+- Actualizar el README con instrucciones detalladas sobre cómo ejecutar el prototipo de la aplicación dockerizado.
+
+
+
