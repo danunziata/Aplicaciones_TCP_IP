@@ -34,4 +34,11 @@ docker run -it --network host bocha2002/clock_reflex:latest
 ```
 El contenedor ya se levanta y la app corre por si sola. En la dirección de (http://localhost:3000) ya tienes tu app corriendo. Puedes acceder desde otro dispositivo mediante la dirección IP correspondiente y el puerto 3000.
 
-En el caso de que requieras clonar el repositorio y obtener los archivos debes generar la imagen, antes del contenedor, a partir de los archivos que se encuentran en esta carpeta, principalmente el Dockerfile.
+En el caso de que requieras clonar el repositorio y obtener los archivos debes generar la imagen, antes del contenedor, a partir de los archivos que se encuentran en esta carpeta, principalmente el Dockerfile. Para hacerlo, debes ejecutar los siguientes comandos:
+
+```shell
+git clone git@github.com:andresbuten2002/Aplicaciones_TCP_IP.git
+cd Aplicaciones_TCP_IP/Puntapie/04-Python-web-apps/andresbuten2002/docker_clock_reflex/
+docker built -t "nombre de la imagen" .
+```
+Con la imagen ya creada, puedes implementar el mismo paso descripto anteriormente para levantar el contenedor.
