@@ -17,7 +17,7 @@
 - Dejar en proyectos.md, usuario de github, el link del repo y el link de acceso a githubpage
 
 
-### ejemplo proyecto.md:
+### Ejemplo proyectos.md:
 
 ```md
 # proyectos integradoroes Puntapie
