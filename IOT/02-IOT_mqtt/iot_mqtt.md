@@ -13,6 +13,8 @@ Los objetivos del protocolo MQTT es minimizar el ancho de banda, comunicación b
 
 Se puede utilizar cifrado SSL el cual añade una sobrecarga debido a un extra en la cantidad de datos, los microcontroladores que se selecciones deben poder implementar el protocolo SSL para garantizar cifrado de extremo a extremo.
 
+![](assets/mqtt.webp)
+
 ## ESTRUCTURA DE UN MENSAJE MQTT
 Lo más importante dentro del protocolo MQTT son los mensajes. Se envían de forma asíncrona, es decir, no hay un reloj indicando una base de tiempo para sincronizar la llegada y salida de información y no hay que esperar respuesta una vez que se envía un mensaje.
 

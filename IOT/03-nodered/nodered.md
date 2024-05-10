@@ -1,7 +1,7 @@
 # Node-RED
 
-![](/03-nodered/assets/Node-red-icon.png
-)
+![](assets/Node-red-icon.png)
+
 ## Introducción:
 Node-RED es una herramienta de código abierto que simplifica el desarrollo de aplicaciones para el Internet de las Cosas (IoT) y la integración de sistemas. Con una interfaz visual intuitiva y basada en flujos, Node-RED permite a desarrolladores y entusiastas de IoT conectar dispositivos y servicios de manera rápida y sencilla, sin necesidad de conocimientos profundos en programación.
 
@@ -9,9 +9,9 @@ Node-RED es una herramienta de código abierto que simplifica el desarrollo de a
 Node-RED es una plataforma de programación visual basada en JavaScript, construida sobre Node.js, que facilita la creación de flujos de trabajo (flows) mediante la interconexión de nodos predefinidos. Estos nodos representan diversas funciones y servicios, desde entradas y salidas de dispositivos IoT hasta servicios web y bases de datos.
 
 
-![](/03-nodered/assets/noderedflow.jpeg)
+![](assets/noderedflow.jpeg)
 
-![](/03-nodered/assets/nodereddashboard.jpg)
+![](assets/nodereddashboard.jpg)
 
 ## Características Principales:
 
