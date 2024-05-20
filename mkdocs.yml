@@ -38,8 +38,8 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-      primary: blue grey
-      accent: lime
+      primary: teal
+      accent: lightblue
       
         
     # Palette toggle for dark mode
@@ -48,8 +48,8 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-      primary: blue grey
-      accent: purple
+      primary: indigo
+      accent: deeporange
         
         
 
