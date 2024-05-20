@@ -8,8 +8,11 @@ repo_url: https://github.com/danunziata/Aplicaciones_TCP_IP
 repo_name: danunziata/Aplicaciones_TCP_IP
 
 # Design
+
+extra_css: [customkdocs/custom.css]
 theme:
   name: material
+  text: 'Roboto, sans-serif'  # Cambiar la fuente de texto a Roboto
   features:
     - navigation.tabs
     - navigation.sections
