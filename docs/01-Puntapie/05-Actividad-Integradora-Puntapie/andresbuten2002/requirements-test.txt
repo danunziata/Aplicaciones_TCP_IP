@@ -1,0 +1,12 @@
+# This requirements are for development and testing only, not for production.
+pytest
+coverage
+flake8
+black
+isort
+pytest-cov
+mypy
+gitchangelog
+mkdocs
+streamlit==1.32.2
+psutil==5.9.8
