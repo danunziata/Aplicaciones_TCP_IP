@@ -65,7 +65,7 @@ extra:
   meta:
   author: Daniel Aninziata
   description: Ing. Telecomunicaciones
-  keywords: Ingeniería, Kubernetes, Engineering, Ingeniería, Telecomunicaciones, Security, Seguridad, Monitoring, Observability
+  keywords: Ingeniería, Engineering, Ingeniería, Telecomunicaciones, iot, IOT, tpc, ip
 
 # Extensions
 markdown_extensions:
