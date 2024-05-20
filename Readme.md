@@ -3,9 +3,10 @@
 <!-- PROJECT LOGO -->
 <br />
 
+
 <div align="center">
   <a href="https://github.com/danunziata/Aplicaciones_TCP_IP">
-    <img src="docs/images/tcpip_logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/logotcpip.jpeg" alt="Logo" width="80" height="80">
   </a>
 <h3 align="center">Aplicaciones TCP IP - 2024</h3>
 
@@ -20,10 +21,8 @@
 </div>
 
 
-
 <!-- TABLE OF CONTENTS -->
 
-<details>
   <summary>Tabla de Contenidos</summary>
   <ol>
     <li>
@@ -45,13 +44,12 @@
     <li><a href="#licencia">Licencia</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ol>
-</details>
+
 
 <!-- ABOUT THE PROJECT -->
 
 ## Sobre el proyecto
 
-![Product Name Screen Shot](assets/logotcpip.jpeg)
 
 La materia Aplicaciones TCP IP, se centra en la formación profesional y laboral del egresado, la asignatura instruye a los estudiantes en las técnicas de diseño, construcción y monitoreo que se utilizan en las arquitecturas de redes de información y la toma de decisiones y análisis ingenieril de los sistemas que la componen. El elemento central de la asignatura es Internet, núcleo, componentes fundamentales para el funcionamiento y servicios. El proceso de enseñanza se basa en conceptos teórico/práctico que son implementados en prácticos de laboratorio, las evaluaciones parciales preparan al alumno para el examen final.
 
@@ -60,8 +58,23 @@ La materia Aplicaciones TCP IP, se centra en la formación profesional y laboral
 
 ### Componentes
 
-* [![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=black)](https://www.python.org/)
 
+
+- [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+
+- [![InfluxDB](https://img.shields.io/badge/InfluxDB-22ADF6?style=for-the-badge&logo=influxdb&logoColor=white)](https://www.influxdata.com/)
+
+- [![EMQX](https://img.shields.io/badge/EMQX-0072C6?style=for-the-badge&logo=emqx&logoColor=white)](https://www.emqx.com/)
+
+- [![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
+
+- [![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=black)](https://www.python.org/)
+
+- [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://www.streamlit.io/)
+
+- [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
+
+- [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
 
 <p align="right">(<a href="#readme-top">Volver al Inicio</a>)</p>
 

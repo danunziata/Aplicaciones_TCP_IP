@@ -7,5 +7,5 @@ Estudio de las aplicaciones y protocolos utilizados en la transmisión de inform
 
 ### [Módulo: Puntapie](01-Puntapie/Readme.md)
 ### [Módulo: IOT](02-IOT/Readme.md)
-### [Módulo: Proyecto Final](03-Proyexto_Final/proyecto_final.md)
+### [Módulo: Proyecto Final](03-Proyecto_Final/proyecto_final.md)
 
