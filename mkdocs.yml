@@ -1,0 +1,92 @@
+# Metadata
+site_name: Aplicaicones TCP IP - 2024
+site_description: Ing. Telecomunicaiones
+site_author: Anunziata Daniel
+
+# Github
+repo_url: https://github.com/danunziata/Aplicaciones_TCP_IP
+repo_name: danunziata/Aplicaciones_TCP_IP
+
+# Design
+
+extra_css: [customkdocs/custom.css]
+theme:
+  name: material
+  text: 'Roboto, sans-serif'  # Cambiar la fuente de texto a Roboto
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  
+  icon:
+    repo: fontawesome/brands/github
+  
+  language: es
+  
+
+  palette: 
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+      primary: teal
+      accent: lightblue
+      
+        
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+      primary: indigo
+      accent: deeporange
+        
+        
+
+# Links footer
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/danunziata/Aplicaciones_TCP_IP
+      name: Repo URL
+
+
+  # More metadata
+  meta:
+  author: Daniel Aninziata
+  description: Ing. Telecomunicaciones
+  keywords: Ingeniería, Engineering, Ingeniería, Telecomunicaciones, iot, IOT, tpc, ip
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+# Copyright footer
+copyright: |
+  &copy; 2024 <a href="https://www.ing.unrc.edu.ar/inicio.php"  target="_blank" rel="noopener">Universidad Nacional de Río cuarto | Facultad de Ingeniería</a>
