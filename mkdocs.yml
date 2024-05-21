@@ -7,6 +7,16 @@ site_author: Anunziata Daniel
 repo_url: https://github.com/danunziata/Aplicaciones_TCP_IP
 repo_name: danunziata/Aplicaciones_TCP_IP
 
+# exclude docs
+
+exclude_docs: |
+  /01-Puntapie/01-Git_Github/Actividad
+  /01-Puntapie/02-Bash/Actividad
+  /01-Puntapie/03-Python/Actividad
+  /01-Puntapie/04-Python-web-apps/Actividad
+  /01-Puntapie/05-Actividad-Integradora-Puntapie/Actividad
+
+
 # Design
 
 extra_css: [customkdocs/custom.css]
