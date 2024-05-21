@@ -150,11 +150,12 @@ Además, se contarán con ramas específicas para la documentación del proyecto
 Los pasos para contribuir en este proyecto como miembro del mismo son:
 
 1. Clonar el repositorio (`git clone`)
-2. Crear una nueva rama para la función (`git checkout -b feature/AmazingFeature`)
-3. Publicar la rama en el repositorio remoto(`git push --set-upstream origin <nombre-de-la-nueva-rama>`)
-4. Commit los cambios (`git commit -m 'Add some AmazingFeature'`)
-5. Push a la rama (`git push origin feature/AmazingFeature`)
-6. Abrir un Pull Request dirigido a la rama `develop`
+2. Mudarse a la rama develop (`git checkout develop`)
+3. Crear una nueva rama a partir de develop para la nueva función (`git checkout -b <nombre-de-la-nueva-rama>`)
+4. Publicar la rama en el repositorio remoto(`git push --set-upstream origin <nombre-de-la-nueva-rama>`)
+5. Commit los cambios (`git commit -m 'Add some AmazingFeature'`)
+6. Push a la rama (`git push origin <nombre-de-la-nueva-rama>`)
+7. Abrir un Pull Request dirigido a la rama `develop`
 
 ### Commits
 
