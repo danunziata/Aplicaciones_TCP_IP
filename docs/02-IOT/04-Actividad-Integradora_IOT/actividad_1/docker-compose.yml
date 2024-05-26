@@ -1,5 +1,6 @@
 version: '3'
 
+
 services:
   emqx:
     image: emqx:5.6.1     #imagen de DOkcer que se utilizará para el servicio
