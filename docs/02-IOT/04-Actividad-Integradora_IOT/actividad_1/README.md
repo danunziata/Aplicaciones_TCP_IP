@@ -75,3 +75,21 @@ Una vez que ya se tienen los contenedores levantados y corriendo, se puede acced
 
 Par acceder al mismo, en un navegador nos situamos en la dirección donde esta levantado el contenedor y el puerto 1880.
 
+Para configurar las conexiones de los nodos de Node-Red a EMQX se necesita colocar la IP y el puerto del servidor, tal como se muestra en la imagen:
+
+![Imagen de conexión a Broker](images/conexion.png)
+
+Esta configuración debe hacerse tanto para el nodo publicador como el suscriptor con el tópico correspondiente, el cual se ha elegido: `labredes/aula/pc1`.
+
+![Nodos_pub_sub](images/nodos_out_inp.png)
+
+Eso fueron las pruebas iniciales utilizando un timestamp que mandaba datos de tiempo y un debug para mostrar los mismos.
+
+uego, se procedió a tomar datos de un publicador con un archivo de python que mide la temperatura y uso del CPU. El tópico al cual esta sucripto el nodo es: `Server/#`. 
+
+El esquema de Node-Red es el siguiente:
+![Esquema Node Red FINAL](images/node-red-final.png)
+
+El dashboard muestra las siguientes gráficas:
+![dashboard](images/dashboard.png)
+
