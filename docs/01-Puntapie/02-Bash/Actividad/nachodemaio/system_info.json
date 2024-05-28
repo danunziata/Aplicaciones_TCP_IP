@@ -1,0 +1,9 @@
+{
+    "sistema_operativo": "Ubuntu 20.04.5 LTS",
+    "kernel": "5.4.0-144-generic",
+    "cpu": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+    "memoria_total": "32G",
+    "espacio_disco": "931G",
+    "version_bash": "5.0.17(1)-release",
+    "version_python": "3.8.10"
+}
