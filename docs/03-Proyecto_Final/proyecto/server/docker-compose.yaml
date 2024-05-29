@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+  #mocksensor:
+  #  build: mocksensor
+  #  volumes:
+  #    - ./data/mocksensor:/tmp/
+  emqx:
+    user: root
+    build: ./emqx
+    ports:
+      - "18083:18083"
+      - "1883:1883"
+    volumes:
+      - ./emqx/data/data:/opt/emqx/data
+      - ./emqx/data/log:/opt/emqx/log
+  
+  influxdb:
+    build: ./influxdb
+    ports: 
+      - "8086:8086"
+    volumes:
+      - ./influxdb/data/data:/var/lib/influxdb2
+      - ./influxdb/data/config:/etc/influxdb2
+  
+  telegrafoutput:
+    build: ./telegraf
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 20
+    volumes:
+      - ./telegraf/data/telegraf.conf:/etc/telegraf/telegraf.conf
+  
+  grafana:
+    user: root
+    build: ./grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/data:/var/lib/grafana
+    secrets:
+      - source: grafana_admin_password
+        target: /run/secrets/admin_password
+secrets:
+  grafana_admin_password:
+    file: ./grafana/secrets/grafana_admin_password
