@@ -1,9 +1,5 @@
 version: "3.9"
 services:
-  #mocksensor:
-  #  build: mocksensor
-  #  volumes:
-  #    - ./data/mocksensor:/tmp/
   emqx:
     user: root
     build: ./emqx
@@ -13,7 +9,8 @@ services:
     volumes:
       - ./emqx/data/data:/opt/emqx/data
       - ./emqx/data/log:/opt/emqx/log
-  
+      #- ./emqx/config/emqx_auth_mysql.conf:/opt/emqx/etc/plugins/emqx_auth_mysql.conf
+
   influxdb:
     build: ./influxdb
     ports: 
@@ -21,17 +18,18 @@ services:
     volumes:
       - ./influxdb/data/data:/var/lib/influxdb2
       - ./influxdb/data/config:/etc/influxdb2
-  
-  telegrafoutput:
-    build: ./telegraf
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 10s
-        max_attempts: 20
+      
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: labiot2024
+      MYSQL_DATABASE: emqx_auth
     volumes:
-      - ./telegraf/data/telegraf.conf:/etc/telegraf/telegraf.conf
-  
+      - ./mysql/data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
   grafana:
     user: root
     build: ./grafana
@@ -42,6 +40,7 @@ services:
     secrets:
       - source: grafana_admin_password
         target: /run/secrets/admin_password
+
 secrets:
   grafana_admin_password:
     file: ./grafana/secrets/grafana_admin_password
