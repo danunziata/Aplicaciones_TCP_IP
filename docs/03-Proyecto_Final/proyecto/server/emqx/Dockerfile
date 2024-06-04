@@ -1,7 +1,16 @@
-# emqx/Dockerfile
-FROM emqx:4.4.3
+FROM emqx:latest
 
-ENV EMQX_DASHBOARD__DEFAULT_USER__LOGIN=labiot
-ENV EMQX_DASHBOARD__DEFAULT_USER__PASSWORD=labiot
+COPY config/emqx_auth_mysql.conf /opt/emqx/etc/plugins/emqx_auth_mysql.conf
 
-# Opcional: Si necesitas hacer alguna configuración adicional, puedes agregar más comandos aquí
+ENV EMQX_DASHBOARD__DEFAULT_USERNAME=labiot
+ENV EMQX_DASHBOARD__DEFAULT_PASSWORD=labiot
+#ENV EMQX_HOST=192.168.5.168
+#ENV EMQX_LISTENER__TCP__EXTERNAL=1883
+#ENV EMQX_HTTP__PORT=18083
+#ENV EMQX_LISTENER__TCP__EXTERNAL=0.0.0.0:1883
+
+# Configurar la autenticación MySQL
+ENV EMQX_AUTH__MYSQL__SERVER=mysql:3306
+ENV EMQX_AUTH__MYSQL__USERNAME=labiot
+ENV EMQX_AUTH__MYSQL__PASSWORD=labiot2024
+ENV EMQX_AUTH__MYSQL__DATABASE=emqx_auth

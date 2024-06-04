@@ -1,0 +1,5 @@
+#ignoramos carpetas data
+grafana/data/
+emqx/data/
+mysql/data/
+influxdb/data/
