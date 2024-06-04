@@ -10,6 +10,7 @@ services:
       - ./emqx/data/data:/opt/emqx/data
       - ./emqx/data/log:/opt/emqx/log
       #- ./emqx/config/emqx_auth_mysql.conf:/opt/emqx/etc/plugins/emqx_auth_mysql.conf
+    network_mode: "host"
 
   influxdb:
     build: ./influxdb
@@ -18,17 +19,16 @@ services:
     volumes:
       - ./influxdb/data/data:/var/lib/influxdb2
       - ./influxdb/data/config:/etc/influxdb2
-      
+    network_mode: "host"
+
   mysql:
-    image: mysql:8.0
+    build: ./mysql
     ports:
       - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: labiot2024
-      MYSQL_DATABASE: emqx_auth
     volumes:
       - ./mysql/data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    network_mode: "host"
 
   grafana:
     user: root
@@ -40,7 +40,8 @@ services:
     secrets:
       - source: grafana_admin_password
         target: /run/secrets/admin_password
-
+    network_mode: "host"
+    
 secrets:
   grafana_admin_password:
     file: ./grafana/secrets/grafana_admin_password
