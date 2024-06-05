@@ -3,5 +3,6 @@ site_name: Proyecto Final Integrador
 nav:
   - Home: index.md
   - Sobre este proyecto: about.md
+  - Empezando: getting_started.md
 
 theme: readthedocs
