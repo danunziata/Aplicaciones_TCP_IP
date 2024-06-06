@@ -1,35 +1,41 @@
 <!-- GETTING STARTED -->
-## Como empezar
-texto
+# Getting Started
 
-### Prerequisites
+Este documento proporciona instrucciones para configurar y ejecutar el proyecto localmente. Para obtener una copia local en funcionamiento, siga estos sencillos pasos.
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+## Prerequisites
 
-### Installation
+Para ejecutar este proyecto, necesitas tener instalado Docker y Docker Compose en tu máquina.
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Docker
+Puedes usar el instalador que se encuentra en este link, el cual permite instalar Docker y otros programas que desees instalar: [Script Instalador](https://unrc.gitlab.io/labredes/scripts/)
 
 
+### Docker Compose:
+Descarga la última versión de Docker Compose del repositorio de GitHub oficial. Ejecuta el siguiente comando en tu terminal:
+```sh
+$ curl -SL https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+```
+A continuación, otorga permisos de ejecución a Docker Compose:
+```sh
+$ sudo chmod +x /usr/local/bin/docker-compose
+```
+La opción --version te permite comprobar si Compose se ha instalado correctamente.
+```sh
+$ docker-compose --version
+```
 
-<!-- USAGE EXAMPLES -->
+## Installation
+Sigue los siguientes pasos para instalar y configurar el proyecto:
+1. Clona el repositorio
+```sh
+git clone git@github.com:danunziata/Aplicaciones_TCP_IP.git
+```
+2. Te situas en la carpeta server:
+```sh
+cd Aplicaciones_TCP_IP/docs/03-Proyecto_Final/proyecto/server/
+```
+3. Levantas los contenedores:
+```sh
+docker-compose up --build
+```
