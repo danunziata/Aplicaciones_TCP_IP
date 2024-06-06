@@ -1,14 +1,14 @@
-## Sobre este proyecto
+# Sobre este proyecto
 
 [![COLOCOAR DIAGRAMA][product-screenshot]](https://example.com)
 
-### Introducción
+## Introducción
 
 El presente proyecto tiene como objetivo construir un entorno de trabajo integrado para la recolección, almacenamiento, análisis y visualización de datos provenientes de dispositivos IoT (Internet of Things). Utilizando una arquitectura basada en contenedores y tecnologías de código abierto, se busca facilitar la gestión eficiente y segura de grandes volúmenes de datos en tiempo real. A continuación, se presenta una descripción detallada de cada componente utilizado en este proyecto y su papel dentro del sistema.
 
-### Marco Teórico
+## Marco Teórico
 
-#### Internet of Things (IoT)
+### Internet of Things (IoT)
 
 <div align="center">
    <img src="/images/iot.png" alt="Logo" width="200" height="200">
@@ -17,7 +17,7 @@ El presente proyecto tiene como objetivo construir un entorno de trabajo integra
 
 El Internet de las Cosas (IoT) se refiere a la interconexión de dispositivos físicos a través de internet, permitiendo que estos recopilen y compartan datos. Estos dispositivos incluyen sensores, actuadores y otros sistemas integrados que pueden comunicarse entre sí y con sistemas centrales para automatizar y optimizar diversos procesos en aplicaciones industriales, domésticas, de salud, entre otras.
 
-#### MQTT (Message Queuing Telemetry Transport)
+### MQTT (Message Queuing Telemetry Transport)
 
 <div align="center">
    <img src="/images/mqtt.png" alt="Logo" width="500" height="500">
@@ -26,7 +26,7 @@ El Internet de las Cosas (IoT) se refiere a la interconexión de dispositivos f�
 
 MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para la comunicación M2M (Machine-to-Machine) y IoT. Utiliza un modelo de publicación/suscripción que permite una transmisión eficiente de datos entre dispositivos y servidores, siendo especialmente útil en redes con ancho de banda limitado y alta latencia.
 
-### Componentes del Proyecto
+## Componentes del Proyecto
 
 - **EMQX**
 <div align="center">
@@ -88,18 +88,18 @@ MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para l
    **Función en el Proyecto:**
    En este proyecto, Streamlit se utiliza para desarrollar aplicaciones web que capturan y procesan datos de los dispositivos IoT. Estas aplicaciones permiten a los usuarios interactuar con los datos de manera intuitiva y realizar análisis personalizados según sus necesidades.
 
-### Finalidad del Proyecto
+## Finalidad del Proyecto
 
 El propósito de este proyecto es proporcionar una solución completa y escalable para la gestión de datos de dispositivos IoT, abarcando desde la recolección y almacenamiento hasta el análisis y visualización de los datos. Este entorno integrado facilita la automatización y optimización de procesos en diversas aplicaciones IoT, proporcionando una plataforma robusta y flexible para la gestión eficiente de grandes volúmenes de datos en tiempo real.
 
-### Arquitectura del Sistema
+## Arquitectura del Sistema
 <div align="center">
    <img src="/images/conteiner.png" alt="contenedores" width="300" height="300">
 </div>
 <br />
 El sistema está diseñado utilizando una arquitectura basada en contenedores, lo que permite una fácil implementación y escalabilidad. Cada componente del sistema se despliega en un contenedor independiente utilizando Docker, y se gestionan colectivamente utilizando Docker Compose.
 
-### Estructura del Proyecto
+## Estructura del Proyecto
 
 La estructura de directorios del proyecto es la siguiente:
 
