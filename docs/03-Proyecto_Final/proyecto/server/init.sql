@@ -26,10 +26,8 @@ CREATE TABLE IF NOT EXISTS `mqtt_acl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Insertar el usuario labiot con contraseña labiot2024 (hasheada con SHA256)
-INSERT INTO mqtt_user (username, password_hash, is_superuser) VALUES ('sensor_raspberry', SHA2('labiot2024', 256), 1);
-INSERT INTO mqtt_user (username, password_hash, is_superuser) VALUES ('sensor_wemos', SHA2('labiot2024', 256), 1);
-INSERT INTO mqtt_user (username, password_hash, is_superuser) VALUES ('sensor_sonoff', SHA2('labiot2024', 256), 1);
-INSERT INTO mqtt_user (username, password_hash, is_superuser) VALUES ('led', SHA2('labiot2024', 256), 1);
+INSERT INTO mqtt_user (username, password_hash) VALUES ('sonoff','tcpip2024');
+INSERT INTO mqtt_user (username, password_hash, is_superuser) VALUES ('raspy', SHA2('sebacrack', 256), 1);
 -- INSERTAR MAS USUARIOS
 
 -- Crear el usuario de base de datos y concederle permisos
