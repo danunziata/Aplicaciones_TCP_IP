@@ -1,0 +1,20 @@
+# Usa la imagen oficial de Python como base
+FROM python:3.8-slim
+
+# Instala las dependencias del sistema necesarias
+RUN apt-get update && apt-get install -y libgl1-mesa-glx libglib2.0-0 libsm6 libxext6 libxrender-dev && rm -rf /var/lib/apt/lists/*
+
+# Copia los archivos necesarios al contenedor
+COPY . /app
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Instala las dependencias de Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expone el puerto en el que se ejecuta la aplicación
+EXPOSE 8501
+
+# Comando para ejecutar la aplicación de Streamlit en modo host
+CMD ["streamlit", "run", "--server.runOnSave true", "--server.headless true", "--server.enableCORS false", "--server.port 8501", "AppWebStreamlit.py"]
