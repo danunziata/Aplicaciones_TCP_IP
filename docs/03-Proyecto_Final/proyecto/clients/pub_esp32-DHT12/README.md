@@ -34,9 +34,11 @@ Adicionalmente, se deben instalar las configuraciones de placas ESP32 dentro del
 
 > File > Preferences > Aditional boards manager URLs
 
+![additional_boards](./assets/boards.png)
+
 y colocar el siguiente enlance:
 
-`https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
+`https://dl.espressif.com/dl/package_esp32_index.json`
 
 #### PlatformIO IDE:
 
@@ -60,7 +62,11 @@ Copiar y pegar el codigo dentro de un sketch nuevo. Tras agregar el codigo al ar
 
 > Tools > Board > ESP32 > ESP32 DEV Module
 
+![tool_boards_arduinoIDE](./assets/module.png)
+
 > Tools > Port > "PuertoCorrespondiente" (tty en Linux / COM# en Windows)
+
+![tools_port_arduinoIDE](./assets/port.png)
 
 Si las configuraciones son correctas, en la esquina inferior derecha se deberia indicar que se esta conectado a la placa ESP32 DEV KIT en el puerto correspondiente.
 Por ultimo, para cargar el codigo al ESP32, utilizar el boton "Upload" (Simbolo &rarr;). Tras cargar el codigo, se puede utilizar un monitor serial externo, o configurar el monitor serial de arduino utilizando el boton de la esquina superior derecha, y la opcion **OPEN SERIAL MONITOR**. 
@@ -71,5 +77,7 @@ Por ultimo, para cargar el codigo al ESP32, utilizar el boton "Upload" (Simbolo 
 Modificar el archivo `main.cpp` y agregar el codigo correspondiente. Este archivo se encuentra ubicado en la carpeta **src** dentro del proyecto. Por ultimo, compilar y cargar el codigo. Para ello, al clickear el icono de PlatformIO dentro del panel izquierdo de Visual Studio Code, ir a la siguiente opcione dentro del panel de PlatformIO.
 
 > PROJECT TASK > esp32doit-devkit-v1 > General > Upload
+
+![upload_platformio](./assets/upload.png)
 
 Una vez finalizada la carga, se puede monitorear la respuesta de la placa utilizando un monitor serial, ya sea instalando un software externo, o utilizando alguna extension adicional dentro de Visual Studio Code.
