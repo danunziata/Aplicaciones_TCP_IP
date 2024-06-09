@@ -41,7 +41,18 @@ services:
       - source: grafana_admin_password
         target: /run/secrets/admin_password
     network_mode: "host"
-    
+
+  streamlit:
+    build: ./streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      - INFLUXDB_URL=http://influxdb:8086
+      - INFLUXDB_TOKEN=my-token
+      - INFLUXDB_ORG=my-org
+      - INFLUXDB_BUCKET=my-bucket
+    network_mode: "host"
+
 secrets:
   grafana_admin_password:
     file: ./grafana/secrets/grafana_admin_password
