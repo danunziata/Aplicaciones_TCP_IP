@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `mqtt_acl` (
 -- Insertar los usuarios con sus contraseñas en texto plano
 INSERT INTO mqtt_user (username, password_hash) VALUES ('sonoff', 'tcpip2024');
 INSERT INTO mqtt_user (username, password_hash) VALUES ('dht11', 'sebacrack');
+INSERT INTO mqtt_user (username, password_hash) VALUES ('raspy', 'tcpip2024');
 
 -- Crear el usuario de base de datos y concederle permisos
 CREATE USER 'labiot'@'%' IDENTIFIED BY 'labiot2024';
