@@ -5,5 +5,5 @@ nav:
   - Sobre este proyecto: about.md
   - Empezando: getting_started.md
   - Sonoff: sonoff.md
-
+  
 theme: readthedocs
