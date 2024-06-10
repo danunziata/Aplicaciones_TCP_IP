@@ -4,8 +4,8 @@ USE emqx_auth;
 
 CREATE TABLE `mqtt_user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) DEFAULT NULL,
-  `password_hash` varchar(100) DEFAULT NULL,
+  `username` varchar(100) NOT NULL,
+  `password_hash` varchar(100) NOT NULL,
   `salt` varchar(35) DEFAULT NULL,
   `is_superuser` tinyint(1) DEFAULT 0,
   `created` datetime DEFAULT NULL,
@@ -25,10 +25,9 @@ CREATE TABLE IF NOT EXISTS `mqtt_acl` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Insertar el usuario labiot con contraseña labiot2024 (hasheada con SHA256)
-INSERT INTO mqtt_user (username, password_hash) VALUES ('sonoff','tcpip2024');
-INSERT INTO mqtt_user (username, password_hash, is_superuser) VALUES ('raspy', SHA2('sebacrack', 256), 1);
--- INSERTAR MAS USUARIOS
+-- Insertar los usuarios con sus contraseñas en texto plano
+INSERT INTO mqtt_user (username, password_hash) VALUES ('sonoff', 'tcpip2024');
+INSERT INTO mqtt_user (username, password_hash) VALUES ('dht11', 'sebacrack');
 
 -- Crear el usuario de base de datos y concederle permisos
 CREATE USER 'labiot'@'%' IDENTIFIED BY 'labiot2024';
