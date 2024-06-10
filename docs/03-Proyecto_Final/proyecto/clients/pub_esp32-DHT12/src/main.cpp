@@ -17,8 +17,8 @@
 DHT12 dht12(DHTPIN, true);
 
 // WiFi
-const char *ssid = "Labredes"; // Nombre de la red Wi-Fi
-const char *password = "Wireshark";  // Enter Wi-Fi password
+const char *ssid = "usr"; // Nombre de la red Wi-Fi
+const char *password = "pass";  // Wi-Fi password
 
 // MQTT Broker
 const char *mqtt_broker = "192.168.5.105";   //IP del Host
