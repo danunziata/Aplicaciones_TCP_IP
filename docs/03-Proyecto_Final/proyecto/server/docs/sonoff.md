@@ -116,4 +116,37 @@ Conectarse a la red configurada y acceder a la IP proporcionada por Tasmota para
   <img src="/images/dashboardprincipal.png" alt="Tasmota" width="700"/>
 </p>
 
-FALTA AGREGAR CONFIGURACIÓN MÓDULO SONOFF, MQTT Y TIMER
+Lo primero que debemos hacer es configurar en base a todos los templates que tiene cargado el firmware de Tasmota, escoger el nuestro. en este caso debemos ir a "Configuration" donde observaremos lo siguiente:
+
+<p align="center">
+  <img src="/images/sonoff_configurationpanel.png" alt="Tasmota" width="200"/>
+</p>
+
+Ingresamos a **Configure Module** y luego elegimos nuestro dispositivo, en este caso: "Sonoff Pow (6)"
+
+<p align="center">
+  <img src="/images/sonoff_moduleparameters.png" alt="Tasmota" width="200"/>
+</p>
+
+Luego, debemos configurar los parámetros de mqtt.
+
+<p align="center">
+  <img src="/images/sonoff_configure_mqtt.png" alt="Tasmota" width="200"/>
+</p>
+
+Opcionalmente, en el apartado logging podemos configurar cada cuanto tiempo enviamos la información al servidor en la parte del Telemetry period (como mínimo Tasmota permite 5).
+
+<p align="center">
+  <img src="/images/sonoff_logging.png" alt="Tasmota" width="200"/>
+</p>
+
+Si configuramos todo correctamente, debemos ver lo siguiente en el menú principal del Tasmota y en la parte de Console podemos ver los logs de cómo se envian los datos.
+
+<p align="center">
+  <div style="display: inline-block; margin: 0 10px;">
+    <img src="/images/sonoff_console.png" alt="Conexión" width="500"/>
+  </div>
+  <div style="display: inline-block; margin: 0 10px;">
+    <img src="/images/sonoff_configured.png" alt="TipodeConexión" width="150"/>
+  </div>
+</p>
