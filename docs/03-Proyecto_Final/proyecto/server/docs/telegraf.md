@@ -91,6 +91,7 @@ El archivo de configuración de Telegraf define cómo y qué datos se recolectan
   organization = "labiot2024"
   bucket = "iotdata"
 ```
+
 ### Explicación de la Configuración
 - global_tags: Define etiquetas globales que se añadirán a todas las métricas recolectadas.
 - agent: Configura el comportamiento del agente de Telegraf, incluyendo intervalos de recolección y parámetros de buffering.

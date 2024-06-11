@@ -20,6 +20,7 @@ ENV DOCKER_INFLUXDB_INIT_RETENTION=1w
 ENV DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=labtcpip-iotdata-auth-token
 ```
 
+Este archivo se encuentra en: [Dockerfile](https://github.com/danunziata/Aplicaciones_TCP_IP/blob/develop/docs/03-Proyecto_Final/proyecto/server/influxdb/Dockerfile)
 ## docker-compose.yaml
 La configuración de `docker-compose.yaml` para el servicio de InfluxDB se detalla a continuación. Este servicio se construye a partir del Dockerfile y utiliza volúmenes para persistir los datos y la configuración.
 
@@ -32,6 +33,8 @@ influxdb:
     - ./influxdb/data/data:/var/lib/influxdb2
     - ./influxdb/data/config:/etc/influxdb2
 ```
+Este archivo se encuentra en: [docker-compose.yaml](https://github.com/danunziata/Aplicaciones_TCP_IP/blob/develop/docs/03-Proyecto_Final/proyecto/server/docker-compose.yaml)
+
 ### Explicación de la Configuración
 - build: Especifica la ruta al directorio que contiene el Dockerfile de InfluxDB.
 - ports: Expone el puerto 8086 del contenedor para que InfluxDB sea accesible desde el host.
