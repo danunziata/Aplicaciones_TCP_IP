@@ -10,8 +10,6 @@ services:
       - ./emqx/data/data:/opt/emqx/data
       - ./emqx/data/log:/opt/emqx/log
       #- ./emqx/config/emqx_auth_mysql.conf:/opt/emqx/etc/plugins/emqx_auth_mysql.conf
-    networks:
-      - redtcpip
 
   influxdb:
     build: ./influxdb
@@ -20,11 +18,9 @@ services:
     volumes:
       - ./influxdb/data/data:/var/lib/influxdb2
       - ./influxdb/data/config:/etc/influxdb2
-    networks:
-      - redtcpip
   
   telegraf:
-    image: "telegraf:1.22.4"
+    build: ./telegraf
     deploy:
       restart_policy:
         condition: on-failure
@@ -32,8 +28,6 @@ services:
         max_attempts: 20
     volumes:
       - ./telegraf/data/telegraf.conf:/etc/telegraf/telegraf.conf
-    networks:
-      - redtcpip
 
   mysql:
     build: ./mysql
@@ -42,8 +36,6 @@ services:
     volumes:
       - ./mysql/data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-      - redtcpip
 
   grafana:
     user: root
@@ -55,13 +47,7 @@ services:
     secrets:
       - source: grafana_admin_password
         target: /run/secrets/admin_password
-    networks:
-      - redtcpip
     
 secrets:
   grafana_admin_password:
     file: ./grafana/secrets/grafana_admin_password
-
-networks:
-  redtcpip:
-    driver: bridge

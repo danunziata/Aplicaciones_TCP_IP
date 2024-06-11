@@ -4,6 +4,12 @@ nav:
   - Home: index.md
   - Sobre este proyecto: about.md
   - Empezando: getting_started.md
-  - Sonoff: sonoff.md
+  - Servidor:
+    - Introduccion: intro_server.md
+    - Telegraf: telegraf.md
+    - Influx DB: influxdb.md
+    - Grafana: grafana.md
+  - Clientes:
+    - Sonoff: sonoff.md
   
 theme: readthedocs
