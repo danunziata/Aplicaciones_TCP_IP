@@ -112,7 +112,10 @@ Para las demas mediciones es muy similar con la diferencia de que cambia `_measu
 
 Así es como se ve el Dashboard completo:
 
-AGREGAR IMAGEN
+<div align="center">
+   <img src="/images/grafana_dashboard.png" alt="Logo" width="700" height="700">
+</div>
+<br />
 
 
 ## Resumen
