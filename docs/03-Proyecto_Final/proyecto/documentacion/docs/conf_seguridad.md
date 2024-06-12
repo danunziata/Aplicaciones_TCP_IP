@@ -58,12 +58,12 @@ Accede al dashboard de EMQX desde [http://0.0.0.0:18083](http://0.0.0.0:18083).
 
 1. Selecciona la opción de autenticación y haz clic en "create".
    
-    ![Dashboard EMQX](create.png)
+    ![Dashboard EMQX](./images/create.png)
 
 2. Selecciona "Password-Bassed" y luego "MySql". Configura de la siguiente forma:
 
-    ![Dashboard EMQX](uno_aut.png)
-    ![Dashboard EMQX](dos_aut.png)
+    ![Dashboard EMQX](./images/uno_aut.png)
+    ![Dashboard EMQX](./images/dos_aut.png)
 
 Cuando se indica "password hash plain" en la configuración de EMQX para la autenticación con MySQL, significa que se utilizará un algoritmo de hash de contraseña "plain" para almacenar las contraseñas de los usuarios en la base de datos MySQL. El término "plain" en este contexto generalmente se refiere a que las contraseñas se almacenarán en texto plano, es decir, sin encriptación adicional.
 
@@ -73,7 +73,7 @@ En primer luagr creo en mi_proyecto un directorio llamado certs y ahi cargo mis 
 
 Dentro de "Listeners" en la columna izquierda, selecciona el listener por default para SSL.
 
-![Dashboard EMQX](lis.png)
+![Dashboard EMQX](./images/lis.png)
 
 Carga los archivos de encriptación en el siguiente orden: `emqx.pem`, `emqx.key`, `ca.pem`, luego presiona "Update".
 

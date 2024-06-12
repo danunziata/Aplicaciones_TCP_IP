@@ -7,9 +7,12 @@ nav:
   - Servidor:
     - Introduccion: intro_server.md
     - Telegraf: telegraf.md
+    - Seguridad: conf_seguridad.md
     - Influx DB: influxdb.md
     - Grafana: grafana.md
   - Clientes:
     - Sonoff: sonoff.md
+    - Raspberry: raspy.md
+    - DHT11: dht11.md
   
 theme: readthedocs
