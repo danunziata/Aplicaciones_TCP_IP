@@ -58,12 +58,12 @@ Accede al dashboard de EMQX desde [http://0.0.0.0:18083](http://0.0.0.0:18083).
 
 1. Selecciona la opción de autenticación y haz clic en "create".
    
-    ![Dashboard EMQX](create.png)
+    ![Dashboard EMQX](./images/create.png)
 
 2. Selecciona "Password-Bassed" y luego "MySql". Configura de la siguiente forma:
 
-    ![Dashboard EMQX](uno_aut.png)
-    ![Dashboard EMQX](dos_aut.png)
+    ![Dashboard EMQX](./images/uno_aut.png)
+    ![Dashboard EMQX](./images/dos_aut.png)
 
 Cuando se indica "password hash plain" en la configuración de EMQX para la autenticación con MySQL, significa que se utilizará un algoritmo de hash de contraseña "plain" para almacenar las contraseñas de los usuarios en la base de datos MySQL. El término "plain" en este contexto generalmente se refiere a que las contraseñas se almacenarán en texto plano, es decir, sin encriptación adicional.
 
@@ -93,7 +93,7 @@ El proceso de comunicación en el protocolo TLS/SSL consta de dos partes. La pri
 
 La siguiente imagen describe el proceso del protocolo de handshake de TLS/SSL, desde el "hello" (saludo) del cliente hasta el "finished" (terminado) del broker. 
 
-![proceso de handshake](cifrado.png)
+![proceso de handshake](./images/cifrado.png)
 
 #### Tipo de cifrado utilizado en este caso es "two- way"
 La certificación bidireccional es que se requiere un certificado para el servicio y el cliente durante la autenticación de la conexión. Ambas partes deben realizar la autenticación para garantizar que se confíe en ambas partes involucradas en la comunicación. Ambas partes comparten sus certificados públicos y luego realizan la verificación y confirmación en función del certificado
@@ -194,7 +194,7 @@ firmo y genero certificado de cliente:
 #### configuracion del dashboard
 Dentro de "Listeners" en la columna izquierda, selecciona el listener por default para SSL.
 
-![Dashboard EMQX](lis.png)
+![Dashboard EMQX](./images/lis.png)
 
 Carga los archivos de encriptación en el siguiente orden: `emqx.pem`, `emqx.key`, `ca.pem`, luego presiona "Update".
  y pongo Force Verify Peer Certificate en true y habilito verify Peer
