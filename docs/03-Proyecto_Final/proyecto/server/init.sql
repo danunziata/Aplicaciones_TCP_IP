@@ -14,12 +14,9 @@ CREATE TABLE `mqtt_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Insertar los usuarios con sus contraseñas en texto plano
--- INSERT INTO mqtt_user (username, password_hash) VALUES ('sonoff', 'tcpip2024');
--- INSERT INTO mqtt_user (username, password_hash) VALUES ('dht11', 'sebacrack');
--- INSERT INTO mqtt_user (username, password_hash) VALUES ('raspy', 'tcpip2024');
-INSERT INTO mqtt_user (username, password_hash, salt) VALUES ('sonoff', SHA2(CONCAT('tcpip2024', 'slat_foo123'), 256), 'slat_foo123');
-INSERT INTO mqtt_user (username, password_hash, salt) VALUES ('dht11', SHA2(CONCAT('sebacrack', 'slat_foo123'), 256), 'slat_foo123');
-INSERT INTO mqtt_user (username, password_hash, salt) VALUES ('raspy', SHA2(CONCAT('labiot2024', 'slat_foo123'), 256), 'slat_foo123');
+INSERT INTO mqtt_user (username, password_hash) VALUES ('sonoff', 'tcpip2024');
+INSERT INTO mqtt_user (username, password_hash) VALUES ('dht11', 'sebacrack');
+INSERT INTO mqtt_user (username, password_hash) VALUES ('raspy', 'tcpip2024');
 
 -- Crear el usuario de base de datos y concederle permisos
 CREATE USER 'labiot'@'%' IDENTIFIED BY 'labiot2024';
