@@ -199,5 +199,5 @@ Dentro de "Listeners" en la columna izquierda, selecciona el listener por defaul
 Carga los archivos de encriptación en el siguiente orden: `emqx.pem`, `emqx.key`, `ca.pem`, luego presiona "Update".
  y pongo Force Verify Peer Certificate en true y habilito verify Peer
 
-Al seguir estos pasos, habrás configurado correctamente la seguridad en EMQX utilizando MySQL y Portainer.
+Por otro lado, cuando el cliente mqtt genera la publicacion o subcripcion utilizo: cliente.pem, cliente.key y ca.pem 
 
