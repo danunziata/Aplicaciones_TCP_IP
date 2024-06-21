@@ -13,18 +13,6 @@ CREATE TABLE `mqtt_user` (
   UNIQUE KEY `mqtt_username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS `mqtt_acl` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ipaddress` varchar(60),
-  `username` varchar(100),
-  `clientid` varchar(100),
-  `access` int(1) NOT NULL,
-  `topic` varchar(100) NOT NULL,
-  `created` datetime DEFAULT CURRENT_TIMESTAMP,
-  `modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 -- Insertar los usuarios con sus contraseñas en texto plano
 INSERT INTO mqtt_user (username, password_hash) VALUES ('sonoff', 'tcpip2024');
 INSERT INTO mqtt_user (username, password_hash) VALUES ('dht11', 'sebacrack');

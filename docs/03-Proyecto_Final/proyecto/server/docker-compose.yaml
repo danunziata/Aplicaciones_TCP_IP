@@ -6,6 +6,7 @@ services:
     ports:
       - "18083:18083"
       - "1883:1883"
+      - "8883:8883"
     volumes:
       - ./emqx/data/data:/opt/emqx/data
       - ./emqx/data/log:/opt/emqx/log
@@ -47,7 +48,16 @@ services:
     secrets:
       - source: grafana_admin_password
         target: /run/secrets/admin_password
-    
+
+  streamlit:
+    build: ./streamlitapp
+    ports:
+      - "8501:8501"
+    environment:
+      - INFLUXDB_URL=http://influxdb:8086
+      - INFLUXDB_TOKEN=labtcpip-iotdata-auth-token
+      - INFLUXDB_ORG=labiot2024
+      - INFLUXDB_BUCKET=iotdata
 secrets:
   grafana_admin_password:
     file: ./grafana/secrets/grafana_admin_password
