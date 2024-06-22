@@ -1,66 +1,61 @@
-#raspymain
-#Publicaciones periodicas al broker EMQX utilizando autentificacion 
-
 import time
-
 import psutil
 import json
+import ssl
+import paho.mqtt.client as mqtt
 
-from paho.mqtt import client as mqtt_client
+broker = '172.26.0.2'
+port = 8883
+topic = "test/topic"
+client_id = 'Raspy1'
+username = 'emqx'
+password = '**********'
 
+key = "/home/ejemplo/Desktop/raspymain/client.key"
+ca = "/home/ejemplo/Desktop/raspymain/ca.pem"
+cert = "/home/ejemplo/Desktop/raspymain/client.pem"
 
-broker = '192.168.xxx.xxx'      #IP Broker
-port = 1883                     #Puerto MQTT
-topic = "python/mqtt"           #Nombre del Topic
-client_id = 'Raspy1'            #ID de Cliente
-username = 'user'               #Usuario para publicar
-password = '12345'              #Password para publicar
+def on_connect(client, userdata, flags, rc):
+    if rc == 0:
+        print("Conectado al Broker MQTT")
+    else:
+        print(f"Error al realizar la conexión, código {rc}")
 
-
-#Funcion para conectarse al broker tras autentificarse
 def connect_mqtt():
-    def on_connect(client, userdata, flags, rc):
-        if rc == 0:
-            print("Conectado al Broker MQTT")
-        else:
-            print("Error al realizar la conexion, codigo %d\n", rc)
-
-    client = mqtt_client.Client(client_id)
-    # client.tls_set(ca_certs='./server-ca.crt')
+    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1,client_id)
     client.username_pw_set(username, password)
+    
+    client.tls_set(certfile=cert, ca_certs=ca, keyfile=key, cert_reqs=ssl.CERT_REQUIRED)
     client.on_connect = on_connect
+    
     client.connect(broker, port)
+    
+    client.callback_connect = on_connect
+    
     return client
 
 
-#Funcion para realizar publicaciones
 def publish(client):
     msg_count = 0
     while True:
-        #Publicaciones cada 3 segundos
-        time.sleep(3)
+        time.sleep(1)
         msg = json.dumps({'id': client_id, 'cpu_usage': psutil.cpu_percent(), 'cpu_temp': get_cpu_temp()})
         result = client.publish(topic, msg)
         status = result[0]
-        if status == 0:
-            print(msg)
+        if status == mqtt.MQTT_ERR_SUCCESS:
+            print(f"Mensaje publicado: {msg}")
         else:
-            print("Error al publicar el mensaje")
+            print(f"Error al publicar el mensaje: {status}")
         msg_count += 1
 
-
-#Funcion para obtener metricas del dispositivo:
 def get_cpu_temp():
     temp = psutil.sensors_temperatures()['cpu_thermal'][0].current
     return temp
 
-
-#Funcion Wrapper
 def run():
     client = connect_mqtt()
     client.loop_start()
     publish(client)
-
 
 if __name__ == '__main__':
     run()

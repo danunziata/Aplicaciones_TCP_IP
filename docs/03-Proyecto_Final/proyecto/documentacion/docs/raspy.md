@@ -50,23 +50,26 @@ Tras importar las librerias necesarias para el funcionamiento del script, se def
 `username`: Nombre de usuario utilizado para la autentificacion dentro del servidor MQTT
 `password`: Contraseña utilizada para la autentificacion dentro del servidor MQTT
 
+Ademas, se deben especificar la ruta completa en la cual se encuentran los tres certificados necesarios para realizar una encriptacion SSL en el contenido de la comunicacion entre el dispositivo y el servidor MQTT. Para ello, modificar las variables `key`, `ca` y `cert` con las ubicaciones correspondientes de cada certificado.
+
 ###### Conexion al servidor MQTT:
 
-Para realizar la conexion al servidor MQTT se define la funcion `connect_mqtt()` la cual realizara un intento de conexion al servidor utilizando la subfuncion `on_connect()`. En caso de fallar se imprime el mensaje de error correspondiente. En caso de que la conexion se realiza de manera exitosa, se regresa el objeto `client` el cual contiene toda la informacion del cliente.
+Para realizar la conexion al servidor MQTT se define la funcion `connect_mqtt()` la cual realizara un intento de conexion al servidor utilizando la informacion proporcionada al comienzo del script, tal como direccion IP, puerto, usuario, contraseña y certificacion. En caso de fallar se imprime el mensaje de error correspondiente. En caso de que la conexion se realiza de manera exitosa, se regresa el objeto `client` el cual contiene toda la informacion del cliente.
+
+*(Nota: en caso de contar con una version de paho-mqtt inferior a la version 2.0.0, la asignacion al objeto `client` debe contener el `client_id` unicamente, no se debe especificar el metodo `mqtt.CallbackAPIVersion.VERSION1`)*
 
 ```bash
 def connect_mqtt():
-    def on_connect(client, userdata, flags, rc):
-        if rc == 0:
-            print("Conectado al Broker MQTT")
-        else:
-            print("Error al realizar la conexion, codigo %d\n", rc)
-
-    client = mqtt_client.Client(client_id)
-    # client.tls_set(ca_certs='./server-ca.crt')
+    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1,client_id)
     client.username_pw_set(username, password)
+    
+    client.tls_set(certfile=cert, ca_certs=ca, keyfile=key, cert_reqs=ssl.CERT_REQUIRED)
     client.on_connect = on_connect
+    
     client.connect(broker, port)
+    
+    client.callback_connect = on_connect
+    
     return client
 ```
 
@@ -137,7 +140,7 @@ Para poder compilar y ejecutar el codigo anteriormente explicado, es necesario c
 
 ## Implementacion y ejecucion
 
-Modificar los valores de las variables `broker`, `port`, `topic`, `client_id`, `username` y `password` dentro del archivo python `raspymain.py` con los valores correspondientes.
+Modificar los valores de las variables `broker`, `port`, `topic`, `client_id`, `username` y `password` dentro del archivo python `raspymain.py` con los valores correspondientes. Agregar ademas la ruta completa de los certificados en las variables `key`, `ca` y `cert`.
 Para ejecutar el script, dentro de una terminal, situarse en la misma direccion en la que se encuentra el archivo antes mencionado. Luego, ejecutar el script utilizando el siguiente comando:
 
 `python3 raspymain.py`
