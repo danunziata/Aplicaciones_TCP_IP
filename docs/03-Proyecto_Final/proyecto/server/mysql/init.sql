@@ -10,5 +10,5 @@ CREATE TABLE `mqtt_user` (
   UNIQUE KEY `mqtt_username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Insertar usuarios adicionales
-INSERT INTO mqtt_user(username, password_hash, salt, is_superuser) VALUES ('emqx_u', SHA2(CONCAT('public', 'slat_foo123'), 256), 'slat_foo123', 1);
+INSERT INTO mqtt_user(username, password_hash, salt, is_superuser)
+VALUES ('emqx_u', SHA2(concat('cliente_123', 'slat_foo123'), 256), 'slat_foo123', 1);

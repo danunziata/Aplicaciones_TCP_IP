@@ -13,22 +13,14 @@ CREATE TABLE `mqtt_user` (
   UNIQUE KEY `mqtt_username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS `mqtt_acl` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ipaddress` varchar(60),
-  `username` varchar(100),
-  `clientid` varchar(100),
-  `access` int(1) NOT NULL,
-  `topic` varchar(100) NOT NULL,
-  `created` datetime DEFAULT CURRENT_TIMESTAMP,
-  `modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 -- Insertar los usuarios con sus contraseñas en texto plano
-INSERT INTO mqtt_user (username, password_hash) VALUES ('sonoff', 'tcpip2024');
-INSERT INTO mqtt_user (username, password_hash) VALUES ('dht11', 'sebacrack');
-INSERT INTO mqtt_user (username, password_hash) VALUES ('raspy', 'tcpip2024');
+-- INSERT INTO mqtt_user (username, password_hash) VALUES ('sonoff', 'tcpip2024');
+-- INSERT INTO mqtt_user (username, password_hash) VALUES ('dht11', 'sebacrack');
+-- INSERT INTO mqtt_user (username, password_hash) VALUES ('raspy', 'tcpip2024');
+
+INSERT INTO mqtt_user (username, password_hash, salt) VALUES ('sonoff', SHA2(CONCAT('labiot2024', 'slat_foo123'), 256), 'slat_foo123');
+INSERT INTO mqtt_user (username, password_hash, salt) VALUES ('dht11', SHA2(CONCAT('sebacrack', 'slat_foo123'), 256), 'slat_foo123');
+INSERT INTO mqtt_user (username, password_hash, salt) VALUES ('raspy', SHA2(CONCAT('tcpip2024', 'slat_foo123'), 256), 'slat_foo123');
 
 -- Crear el usuario de base de datos y concederle permisos
 CREATE USER 'labiot'@'%' IDENTIFIED BY 'labiot2024';

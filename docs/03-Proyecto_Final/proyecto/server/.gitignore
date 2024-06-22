@@ -4,3 +4,5 @@ emqx/data/
 mysql/data/
 influxdb/data/
 telegraf/data/
+certs
+seguridad
