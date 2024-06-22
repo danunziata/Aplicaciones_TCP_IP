@@ -276,10 +276,6 @@ Cargo los archivos de encriptación en el siguiente orden: `emqx.pem`, `emqx.key
 ![Dashboard EMQX](./images/copy.png)
 
  y pongo Force Verify Peer Certificate en true y habilito verify Peer
-
- importante en advance settings pongo la version 1.2 de TLS en el listener
-
-![alt text](./images/image.png)
 ## Pruebas
 ![Dashboard EMQX](./images/p_c.png)
 ![Dashboard EMQX](./images/handshake.png)
