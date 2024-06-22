@@ -1,106 +1,178 @@
 # Seguridad EMQX
 
-# Autenticación con MySQL
+# Autenticación 
 
-Este documento describe los pasos necesarios para configurar la seguridad en EMQX utilizando MySQL para la autenticación y Portainer para la administración de contenedores Docker.
+### Introducción
+Este proceso se emplea para verificar la identidad del cliente MQTT y prevenir que terceros puedan publicar o suscribirse sin autorización.
+Para almacenar los datos necesarios para autenticar clientes MQTT, se utiliza una base de datos MySQL a la cual el servidor EMQX consulta para verificar la coincidencia entre el usuario y contraseña que el cliente utiliza para publicar o suscribirse y las que están almacenadas.
 
-### Paso 1: Preparación de archivos y directorios
+### MySQL
+Es una base de datos, se utiliza para estructurar y organizar los datos. Estos datos se almacenan en una estructura de "matriz" donde las columnas, conocidas como atributos, representan el tipo de dato almacenado, y las filas, llamadas registros, contienen los datos organizados en cada columna correspondiente dentro de una matriz de datos.
 
-1. Crea un directorio para el proyecto:
+### Tipo de Autenticación: basada en contraseña
+
+En esta sección, se implemento la autenticación para clientes MQTT utilizando nombre de usuario y contraseña, como se menciono anteriormente. Las contraseñas se almacenan de manera "hasheada". Esto significa que la contraseña se combina con el algoritmo SHA256 y se guarda en la base de datos como una cadena de caracteres, donde la contraseña original no es reconocible. Debido a que este proceso es unidireccional, no es matemáticamente posible recuperar la contraseña original a partir de los datos almacenados en la base de datos, incluso conociendo el algoritmo y el salt.
+
+## Configuración de Autenticación con MySQL
+
+### Paso 1: Archivo init.sql para Configurar la Base de Datos
+
+Esta configuración se explica en caso de que se desee agregar nuevas tablas o registros, aunque ya se tenga el archivo.
+ Creo archivo:
+```bash
+    touch init.sql
+ ```
+entro a editarlo:
+```bash
+    nano init.sql
+ ```
+dentro de el pongo tabla con atributos de interes:
+```bash
+    CREATE TABLE `mqtt_user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) DEFAULT NULL,
+  `password_hash` varchar(100) DEFAULT NULL,
+  `salt` varchar(35) DEFAULT NULL,
+  `is_superuser` tinyint(1) DEFAULT 0,
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `mqtt_username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+ ```
+Ahora agrego la informacion que voy almacenar en cada atributo, agrego un registro por cliente:
+```bash
+  INSERT INTO mqtt_user(username, password_hash, salt, is_superuser) VALUES ('emqx_u', SHA2(concat('public', 'slat_foo123'), 256), 'slat_foo123', 1);
+Query OK, 1 row affected (0,01 sec)
+ ```
+### Paso 2: orden de almacenamiento 
+
+1. Creo un directorio para el proyecto:
 
     ```bash
     mkdir mi_proyecto
     cd mi_proyecto
     ```
 
-2. Guarda los siguientes archivos en el directorio creado:
+2. Guardo los siguientes archivos en el directorio creado:
    - `docker-compose.yaml`
    - `init.sql`
-
-3. Genera un directorio llamado `data` y otórgale permisos:
-
-    ```bash
+3. Creo directorio data y le doy permisos
+   ```bash
     mkdir data
     chmod 777 data
     ```
 
-### Paso 2: Configuración de Docker
+### Paso 3: Configuración de Docker
 
-1. Crea una red Docker llamada `mi_red`:
+1. Creo una red Docker llamada `mi_red`:
 
     ```bash
     docker network create mi_red
     ```
-
-2. Levanta los contenedores utilizando `docker-compose`:
+3. Levanto los contenedores utilizando `docker-compose`:
 
     ```bash
     docker-compose up -d
     ```
-
-### Paso 3: Verificación de la Configuración
-
-1. Verifica que los contenedores se hayan levantado correctamente utilizando Portainer:
-
-    ```bash
-    docker volume create portainer_data
-    docker run -d -p 9000:9000 -p 8000:8000 --name=portainer --restart=always \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        -v portainer_data:/data \
-        portainer/portainer-ce
-    ```
-
-2. Accede a Portainer desde tu navegador web utilizando la dirección [http://localhost:9000](http://localhost:9000).
-
-### Paso 4: Configuración del Dashboard EMQX para autenticación 
+### Paso 4: Configuración del Dashboard EMQX  
 
 Accede al dashboard de EMQX desde [http://0.0.0.0:18083](http://0.0.0.0:18083).
 
-1. Selecciona la opción de autenticación y haz clic en "create".
+1. Selecciono la opción de autenticación y aprieto "create" y 
    
-    ![Dashboard EMQX](./images/create.png)
+    ![Dashboard EMQX](create.png)
 
-2. Selecciona "Password-Bassed" y luego "MySql". Configura de la siguiente forma:
+2.  luego "MySql"
+     ![Dashboard EMQX](au_2.png)
+    
+3.  Presiono settings y configuro de la siguiente forma:
 
-    ![Dashboard EMQX](./images/uno_aut.png)
-    ![Dashboard EMQX](./images/dos_aut.png)
+ ![Dashboard EMQX](c_d.png)
 
-Cuando se indica "password hash plain" en la configuración de EMQX para la autenticación con MySQL, significa que se utilizará un algoritmo de hash de contraseña "plain" para almacenar las contraseñas de los usuarios en la base de datos MySQL. El término "plain" en este contexto generalmente se refiere a que las contraseñas se almacenarán en texto plano, es decir, sin encriptación adicional.
+## Pruebas con Mosquitto: Verificación de Funcionamiento
 
-# Certificacion
+previo instalamos el mosquito y desactivamos el servidor, ya que usa el mismo puerto que usamos para las pruebas.
+verificamos que nadie usa ese puerto con:
 
-## Teoria del funcionamiento:
+```bash
+    sudo lsof -i :3306
+```
 
-Los portocolos utilizados en este caso son TLS (Transport Layer Security) y SSL (Secure Sockets Layer) son protocolos criptográficos que proporcionan autenticación y cifrado de datos entre el cliente ( que puede ser pub o sub)  y el servidor (broker emqx).
-Cuando nos referimos a que son protocolos criptograficos es por el hecho de que en este protocolo se busca garantizar lo siguiente a la hora de comunicarnos:
+ ![Dashboard EMQX](p_a.png)
 
-#### Confidencialidad
- Los datos transmitidos están cifrados, lo que significa que solo las partes autorizadas pueden entender el contenido de los mensajes. Esto se logra mediante algoritmos criptográficos que transforman los datos en un formato ilegible sin la clave de descifrado correspondiente.
+ estructura del pub y sub:
+ ```bash
+   mosquitto_pub -h localhost  -p 1883  -u "usuario" -P contra -t "algun/topico" -m "agun_mensaje"
+  ```
+```bash
+   mosquitto_pub -h localhost  -p 1883  -u "usuario" -P contra -t "algun/topico" -m "agun_mensaje"
+  ```
 
-#### Integridad 
-TLS/SSL utilizan funciones criptográficas como hashes y firmas digitales para asegurar que los datos no sean alterados durante la transmisión. Esto garantiza que los destinatarios reciban los datos exactamente como fueron enviados, sin modificaciones no autorizadas.
+(se hace pub y sub desde consolas diferentes)
 
-#### Autenticación
- Los protocolos TLS/SSL permiten la autenticación de las partes involucradas en la comunicación mediante el uso de certificados digitales. Estos certificados son emitidos por autoridades de certificación y contienen claves públicas que pueden ser verificadas para confirmar la identidad del emisor.
+# Autenticacion por Certificados  X.509
 
-#### Seguridad en la Comunicación
- En conjunto, estos principios criptográficos aseguran que las comunicaciones en redes, como las transacciones en línea, la transferencia de datos sensibles y la navegación web segura, estén protegidas contra la interceptación y la manipulación por parte de terceros malintencionados.
+## Introduccion
+El protocolo usado a continuacion es SSL/TLS "socket segure layer" y "transport segure Layer" ya que este protocolo permitio a las partes verificar la identidad del otro mediante certificados digitales X.509 emitidos por instituciones de confianza. 
+Este protocolo consta dos partes:
+Handshake y record que se van a describir a continuacion. En nuestro caso usamos certificacion de "dos vias" por lo tanto se crearon certificados tanto para los clientes MQTT como para el servidor EMQX.
 
+## Certificados Autofirmados
+Como se menciono anteriormente, los certificados deben crearse  por "instituciones de confianza" en este caso, esta "institucion" se invento por medio de la creacion de un certificado autofirmado ca.pem que luego se utilizo para "firmar" los certificados tanto del servidor como del cliente. El proceso de creacion se detalla en la seccion de configuracion
 
- #### Proceso de cifrado
+## certificacion en "dos vias"
+Este fue el tipo de certificacion elegida, la cual implica el intercambio entre y cliente y servidor de sus propios certificados. Obviamente deben ser calificados como "validos" para lo cual, como se menciono anteriomente, ambos se firmaron con la "institucion ficticia" creada en el ca.pem esto se detalla en la configuracion.
+Como mencionamos en la introduccion el protocolo SSL/TLS consta de dos partes:
 
-El proceso de comunicación en el protocolo TLS/SSL consta de dos partes. La primera parte es el protocolo de handshake (saludo). El propósito de este protocolo de handshake es identificar la identidad de la otra parte y establecer un canal de comunicación seguro. Después del handshake, ambas partes negociarán la suite de cifrado y la clave de sesión para la comunicación siguiente. La segunda parte es el protocolo de record (registro). Record es muy similar a otros protocolos de transmisión de datos. Lleva tipos de contenido, versión, longitud, carga, etc., y la diferencia es que la información llevada por este protocolo está cifrada.
+### Hanshake
+El "handshake" (apretón de manos)  se refiere al proceso mediante la cual el cliente y servidor establecen una conexión segura y autenticada antes de intercambiar datos.Seria una especie de "dialogo" entre ambos.
 
-La siguiente imagen describe el proceso del protocolo de handshake de TLS/SSL, desde el "hello" (saludo) del cliente hasta el "finished" (terminado) del broker. 
+#### 1.
+El mensaje de "hola" del cliente": el cliente inicia el protocolo de enlace enviando un mensaje "hola" al servidor. El mensaje incluirá: versión de TLS que admite el cliente, los conjuntos de cifrado compatibles y una cadena de bytes aleatorios "cliente aletorio"
+#### 2.
+El mensaje de "hola" del servidor": en respuesta al mensaje de hola del cliente, el servidor envía un mensaje que contiene el certificado del servidor (emqx.pem), el conjunto de cifrado elegido por este, y otra cadena aleatoria de bytes que genera el servidor "servidor aleatorio"
+#### 3.
+Solicitud de Certificado del Cliente:El servidor solicita al cliente que proporcione su certificado para autenticación.
+#### 4.
+El cliente envía su certificado al servidor, demostrando su identidad.
+(client.pem)
+#### 5.
+El cliente "verifica" el certificado del servidor (emqx.pem)  
+#### 6.
+El servidor "verifica" el certificado del cliente (cliente.pem) 
+#### 7.
+Secreto Premaster:El cliente utiliza su clave privada (cliente.key) para firmar digitalmente el secreto premaster antes de enviarlo.
+Uso: Asegura la autenticidad del cliente, garantizando que el mensaje viene efectivamente del cliente que posee el certificado.
 
-![proceso de handshake](./images/cifrado.png)
+#### 8.
+Envió del Secreto Premaster:
+El cliente envía el secreto premaster cifrado al servidor.
+Uso: Asegura que solo el servidor puede descifrarlo utilizando su clave privada (emqx.key).
+#### 9.
+Descifrado del Secreto Premaster:
+El servidor descifra el secreto premaster con su clave privada (emqx.key).
+#### 10.
+Generación de Claves de Sesión:
+Tanto el cliente como el servidor generan claves de sesión a partir del cliente aleatorio, el servidor aleatorio y el secreto premaster.
+Ambas partes deberían llegar a las mismas claves de sesión.
+#### 11.
+El cliente envía un mensaje "Terminado" cifrado con una clave de sesión, indicando que está listo.
+#### 12.
+El servidor envía un mensaje "Terminado" cifrado con una clave de sesión, indicando que también está listo.
+Encriptación Simétrica:
+La comunicación continúa utilizando las claves de sesión para asegurar la confidencialidad e integridad de los datos.
 
-#### Tipo de cifrado utilizado en este caso es "two- way"
-La certificación bidireccional es que se requiere un certificado para el servicio y el cliente durante la autenticación de la conexión. Ambas partes deben realizar la autenticación para garantizar que se confíe en ambas partes involucradas en la comunicación. Ambas partes comparten sus certificados públicos y luego realizan la verificación y confirmación en función del certificado
+![Dashboard EMQX](cifrado.png)
+
+### Record
+
+Una vez que el handshake ha sido completado exitosamente y se ha establecido una conexión segura TLS/SSL, es cuando entra en juego el concepto de "record":
+El "record" es muy similar a otros protocolos de transmisión de datos. Transporta tipo de contenido, versión, longitud, carga, etc., y la diferencia es que la información transportada por este protocolo está encriptada.
 
 ## Pasos de la configuracion 
 
-#### creacion de certificados
+
+### creacion de certificados
 
 En primer lugar creo en mi_proyecto un directorio llamado certs y  me posisiono dentro de esa carpeta.
 
@@ -116,6 +188,8 @@ instalo open SSL
 ```bash
     sudo apt install openssl
 ```
+
+#### Certificado autofirmado
 Genero el certificado ca.pem autofirmado:
 
 primero genero clave privada para firmarlo:
@@ -126,7 +200,8 @@ luego lo creo
 ```bash
    openssl req -x509 -new -nodes -key ca.key -sha256 -days 3650 -out ca.pem   
 ```
-Ahora genero certificados para el servidor (emqx)
+
+#### Certificados para el servidor
 
 en principio clave privada:
 ```bash
@@ -139,7 +214,7 @@ luego creo archivo openssl.cnf
 ```bash
     nano openssl.cnf 
 ```
-lo edito con el siguiente archivo cambio SOLO donde dice broker_address, alli pongo la direccion ip de mi emqx :
+lo edito con el siguiente archivo cambio SOLO donde dice broker_address, alli pongo la direccion ip de mi servidor emqx:
 ```bash
     [req]
 default_bits  = 2048
@@ -174,7 +249,7 @@ por ultimo uso el ca.pem para generar el certificado de emqx:
     openssl x509 -req -in ./emqx.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out emqx.pem -days 3650 -sha256 -extensions v3_req -extfile openssl.cnf
 
 ```
-Luego genero certificado del cliente 
+#### Certificados del cliente
 clave del cliente:
 ```bash
    openssl genrsa -out client.key 2048
@@ -194,10 +269,18 @@ firmo y genero certificado de cliente:
 #### configuracion del dashboard
 Dentro de "Listeners" en la columna izquierda, selecciona el listener por default para SSL.
 
-![Dashboard EMQX](./images/lis.png)
+![Dashboard EMQX](lis.png)
 
-Carga los archivos de encriptación en el siguiente orden: `emqx.pem`, `emqx.key`, `ca.pem`, luego presiona "Update".
+Cargo los archivos de encriptación en el siguiente orden: `emqx.pem`, `emqx.key`, `ca.pem`, luego presiona "Update".
+
+![Dashboard EMQX](copy.png)
+
  y pongo Force Verify Peer Certificate en true y habilito verify Peer
 
-Por otro lado, cuando el cliente mqtt genera la publicacion o subcripcion utilizo: cliente.pem, cliente.key y ca.pem 
+ importante en advance settings pongo la version 1.2 de TLS en el listener
+
+![alt text](image.png)
+## Pruebas
+![Dashboard EMQX](p_c.png)
+![Dashboard EMQX](handshake.png)
 
