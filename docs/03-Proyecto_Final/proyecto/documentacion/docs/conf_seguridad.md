@@ -80,14 +80,14 @@ Accede al dashboard de EMQX desde [http://0.0.0.0:18083](http://0.0.0.0:18083).
 
 1. Selecciono la opción de autenticación y aprieto "create" y 
    
-    ![Dashboard EMQX](create.png)
+    ![Dashboard EMQX](./images/create.png)
 
 2.  luego "MySql"
-     ![Dashboard EMQX](au_2.png)
+     ![Dashboard EMQX](./images/au_2.png)
     
 3.  Presiono settings y configuro de la siguiente forma:
 
- ![Dashboard EMQX](c_d.png)
+ ![Dashboard EMQX](./images/c_d.png)
 
 ## Pruebas con Mosquitto: Verificación de Funcionamiento
 
@@ -98,7 +98,7 @@ verificamos que nadie usa ese puerto con:
     sudo lsof -i :3306
 ```
 
- ![Dashboard EMQX](p_a.png)
+ ![Dashboard EMQX](./images/p_a.png)
 
  estructura del pub y sub:
  ```bash
@@ -162,7 +162,7 @@ El servidor envía un mensaje "Terminado" cifrado con una clave de sesión, indi
 Encriptación Simétrica:
 La comunicación continúa utilizando las claves de sesión para asegurar la confidencialidad e integridad de los datos.
 
-![Dashboard EMQX](cifrado.png)
+![Dashboard EMQX](./images/cifrado.png)
 
 ### Record
 
@@ -269,18 +269,18 @@ firmo y genero certificado de cliente:
 #### configuracion del dashboard
 Dentro de "Listeners" en la columna izquierda, selecciona el listener por default para SSL.
 
-![Dashboard EMQX](lis.png)
+![Dashboard EMQX](./images/lis.png)
 
 Cargo los archivos de encriptación en el siguiente orden: `emqx.pem`, `emqx.key`, `ca.pem`, luego presiona "Update".
 
-![Dashboard EMQX](copy.png)
+![Dashboard EMQX](./images/copy.png)
 
  y pongo Force Verify Peer Certificate en true y habilito verify Peer
 
  importante en advance settings pongo la version 1.2 de TLS en el listener
 
-![alt text](image.png)
+![alt text](./images/image.png)
 ## Pruebas
-![Dashboard EMQX](p_c.png)
-![Dashboard EMQX](handshake.png)
+![Dashboard EMQX](./images/p_c.png)
+![Dashboard EMQX](./images/handshake.png)
 
