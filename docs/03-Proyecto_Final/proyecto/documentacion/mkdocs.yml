@@ -10,6 +10,7 @@ nav:
     - Seguridad: conf_seguridad.md
     - Influx DB: influxdb.md
     - Grafana: grafana.md
+    - Streamlit: Streamlit.md
   - Clientes:
     - Sonoff: sonoff.md
     - Raspberry: raspy.md
