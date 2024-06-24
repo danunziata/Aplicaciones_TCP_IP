@@ -1,7 +1,7 @@
 # <p align=center> WEMOS LOLIN D1 mini - Sensor de Humedad, temperatura y presion DHT12<p>
 
 <p align="center">
-  <img src="./images/wemoslogo.jpeg" width="200"/>
+  <img src="/images/wemoslogo.jpeg" width="200"/>
 </p>
 
 ## Introduccion
@@ -15,7 +15,30 @@ El dispositivo LOLIN D1 mini es un microcontrolador compacto que cuenta con una 
 
 ## El sensor DHT11/DHT12
 
-Los sensores DHT estan compuestos de dos partes, un sensor de humedad capacitivo y un termistor. Tambien incluyen un chip con una logica interna que permite realizar la conversion de datos analogicos a digitales lo que devuelve señales digitales de temperatura y humedad, que pueden ser leidas facilmente por cualquier microcontrolador. Particularmente, el sensor DHT11 cuenta con una entrada de tension de alimentacion de 3V a 5V, y un pin de salida digital. Este sensor realiza mediciones de humedad de entre el 20-80% con error de precision del 5%, y mediciones de temperatura de 0-50°C con error de precision de ±2°C. Ademas cuenta con una tasa de muestreo de 1 Hz, lo que permite realizar un maximo de una medicion por segundo. 
+#### Resumen General
+
+Los sensores DHT estan compuestos de dos partes, un sensor de humedad capacitivo y un termistor. Tambien incluyen un chip con una logica interna que permite realizar la conversion de datos analogicos a digitales lo que devuelve señales digitales de temperatura y humedad, que pueden ser leidas facilmente por cualquier microcontrolador. Particularmente, el sensor DHT11 cuenta con una entrada de tension de alimentacion de 3V a 5V, y un pin de salida digital. Este sensor realiza mediciones de humedad de entre el 20-80% con error de precision del 5%, y mediciones de temperatura de 0-50°C con error de precision de ±2°C. Ademas cuenta con una tasa de muestreo de 1 Hz, lo que permite realizar un maximo de una medicion por segundo.
+
+#### Conversion de datos:
+
+Los sensores DHT, tras realizar la medicion de temperatura y humedad, convierten los datos analogicos digitales mediante un ADC interno en el dispositivo. El formato de dato es de 40 bits, y puede ser interpretado y convertido a decimal facilmente por dispositivos como Arduino utilizando las librerias adecuadas. Los 40 bits de informacion digital estan seccionados de la siguiente forma:
+
+![dht_bits](./images/dhtbits.png)
+
+#### El protococolo I²C:
+
+El protocolo I²C (Circuito Inter-Integrado) está diseñado como un bus maestro-esclavo. La transferencia de datos es siempre inicializada por un maestro; el esclavo reacciona. Es posible tener varios maestros mediante un modo multimaestro, en el que se pueden comunicar dos maestros entre sí, de modo que uno de ellos trabaja como esclavo. El arbitraje (control de acceso en el bus) se rige por las especificaciones, de este modo los maestros pueden ir turnándose. La comunicacion se realiza a traves de una señal de reloj **(SCL)**, que siempre es generada por el maestro. Ademas se cuenta con con cable extra, por el cual se realiza la escritura/lectura de datos de manera serial **(SDA)**. En algunos tipos de comunicacion I²C no es necesario utilizar 2 los dos cables (SDA y SCL) y se puede utilizar el protocolo con solamente uno de los dos cables (SDA). Al usar un unico cable, se limita el protocolo a un solo maestro-esclavo y ademas es una comunicacion mas lenta y de menor alcance (metros) en comparacion con I²C de dos cables, que se trata de una comunicacion mas rapida, de mayor alcance y que permite multiples maestros. 
+
+#### DHT11 vs. DHT12:
+ 
+Si bien las especificaciones tecnicas son similares, la diferencia entre version de DHT radica en los pines y la implementacion del protocolo I²C:
+ - **DHT11:** Cuenta fisicamente con dos pines, pero uno de los dos (SCL) no se utiliza ya que no esta conectado logicamente al dispositivo.
+ - **DHT12:** A diferencia del DHT11, este cuenta con los dos pines SCL y SDA lo que permite realizar conexion I²C de uno o dos cables.
+
+#### Implementacion de I²C en WEMOS:
+
+Para este proyecto, dado que el WEMOS DHT Shield modifica fisicamente el sensor DHT, solamente se puede utilizar una conexion I²C de un solo cable.
+
 [(Documentacion oficial DHT - Adafruit)](https://learn.adafruit.com/dht/overview) 
 
 ## Firmware en el ESP8266: Tasmota

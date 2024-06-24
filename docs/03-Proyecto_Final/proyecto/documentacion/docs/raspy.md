@@ -1,7 +1,7 @@
 # <p align=center> Raspberry 2 Pi - Medicion de temperatura y uso de CPU <p>
 
 <p align="center">
-  <img src="./images/raspy2logo.png" width="200"/>
+  <img src="/images/raspy2logo.png" width="200"/>
 </p>
 
 ## Introduccion
