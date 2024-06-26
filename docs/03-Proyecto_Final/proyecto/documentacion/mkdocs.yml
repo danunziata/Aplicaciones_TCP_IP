@@ -6,6 +6,7 @@ nav:
   - Empezando: getting_started.md
   - Servidor:
     - Introduccion: intro_server.md
+    - Docker Compose: docker.md
     - Telegraf: telegraf.md
     - Seguridad EMQX: conf_seguridad.md
     - Influx DB: influxdb.md
