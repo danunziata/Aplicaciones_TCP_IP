@@ -99,6 +99,7 @@ Verificamos que nadie usa ese puerto con:
 ```bash
 sudo lsof -i :3306
 ```
+en la siguiente imagen vemos como podemos publicar con la contraseña y usuario correctos y cómo sin ellos obtenemos mensaje de error.
 
  ![Dashboard EMQX](./images/p_a.png)
 
