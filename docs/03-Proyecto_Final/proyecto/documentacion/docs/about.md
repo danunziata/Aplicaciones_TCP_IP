@@ -26,7 +26,7 @@ El Internet de las Cosas (IoT) se refiere a la interconexión de dispositivos f�
 </div>
 <br />
 
-MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para la comunicación M2M (Machine-to-Machine) y IoT. Utiliza un modelo de publicación/suscripción que permite una transmisión eficiente de datos entre dispositivos y servidores, siendo especialmente útil en redes con ancho de banda limitado y alta latencia.
+MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para la comunicación IoT. Utiliza un modelo de publicación/suscripción que permite una transmisión eficiente de datos entre dispositivos y servidores, siendo especialmente útil en redes con ancho de banda limitado y alta latencia.
 
 ## Componentes del Proyecto
 
