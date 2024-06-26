@@ -36,11 +36,20 @@ MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para l
   </div>
   <br />
 
-  **Descripción:**
   EMQX es un broker de mensajes MQTT de alto rendimiento, escalable y distribuido. Está diseñado para manejar millones de conexiones concurrentes, proporcionando una plataforma robusta para la comunicación IoT.
 
-  **Función en el Proyecto:**
   En este proyecto, EMQX se encarga de gestionar la comunicación entre los dispositivos IoT y el sistema central. Actúa como intermediario para la transmisión de mensajes, garantizando que los datos enviados por los dispositivos lleguen de manera eficiente y segura a los servidores y aplicaciones correspondientes.
+
+- **Telegraf**
+  <div align="center">
+     <img src="/images/telegraf.png" alt="Logo" width="200" height="200">
+  </div>
+  <br />
+  Telegraf es un agente de recopilación de métricas desarrollado por la empresa InfluxData. Es parte del conjunto de herramientas de InfluxDB, que también incluye InfluxDB (base de datos de series temporales), Chronograf (interfaz de usuario para la visualización) y Kapacitor (procesamiento de datos en tiempo real).
+  
+  La configuración de Telegraf se realiza a través de un archivo de configuración (generalmente telegraf.conf), lo que permite una fácil personalización.
+
+  Tiene un alto grado de compatibilidad, ya que puede integrarse con varios sistemas de almacenamiento y visualización de datos, como InfluxDB, Graphite, OpenTSDB, Prometheus, Datadog, AWS CloudWatch, entre otros.
 
 - **InfluxDB**
   <div align="center">
@@ -48,11 +57,7 @@ MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para l
   </div>
   <br />
 
-  **Descripción:**
   InfluxDB es una base de datos de series temporales optimizada para manejar grandes volúmenes de datos generados por sensores y dispositivos IoT. Está diseñada para la ingestión rápida de datos, consulta de series temporales y retención de datos.
-
-  **Función en el Proyecto:**
-  InfluxDB se utiliza para almacenar los datos de telemetría y otros datos en tiempo real generados por los dispositivos IoT. Su capacidad para manejar series temporales de manera eficiente permite almacenar y consultar grandes volúmenes de datos con alta precisión temporal.
 
 - **MySQL**
   <div align="center">
@@ -60,10 +65,8 @@ MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para l
   </div>
   <br />
 
-  **Descripción:**
   MySQL es una base de datos relacional ampliamente utilizada para almacenar datos estructurados. Su popularidad y soporte para múltiples lenguajes de programación lo convierten en una opción sólida para muchas aplicaciones.
 
-  **Función en el Proyecto:**
   En este proyecto, MySQL se utiliza para almacenar datos relacionados con la autenticación y autorización de usuarios y dispositivos. Esto incluye información sobre usuarios, contraseñas hasheadas y permisos de acceso, facilitando la gestión segura del acceso al sistema.
 
 - **Grafana**
@@ -72,11 +75,9 @@ MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para l
   </div>
   <br />
 
-  **Descripción:**
   Grafana es una plataforma de análisis y monitoreo que permite la creación de paneles interactivos y visualizaciones en tiempo real. Soporta una amplia variedad de fuentes de datos, incluyendo InfluxDB, y proporciona herramientas avanzadas para el análisis de datos.
-
-  **Función en el Proyecto:**
-  Grafana se utiliza para crear paneles de control y visualizaciones en tiempo real de los datos almacenados en InfluxDB. Esto permite a los usuarios monitorear el rendimiento y el estado de los dispositivos IoT, así como realizar análisis detallados de los datos recolectados.
+  
+  Esto permite a los usuarios monitorear el rendimiento y el estado de los dispositivos IoT, así como realizar análisis detallados de los datos recolectados.
 
 - **Streamlit**
   <div align="center">
@@ -84,10 +85,8 @@ MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para l
   </div>
   <br />
 
-  **Descripción:**
   Streamlit es una biblioteca de Python que permite la creación de aplicaciones web interactivas de manera rápida y sencilla. Está diseñada para el desarrollo de aplicaciones de análisis de datos y es ideal para la creación de herramientas personalizadas de visualización y procesamiento de datos.
 
-  **Función en el Proyecto:**
   En este proyecto, Streamlit se utiliza para desarrollar aplicaciones web que capturan y procesan datos de los dispositivos IoT. Estas aplicaciones permiten a los usuarios interactuar con los datos de manera intuitiva y realizar análisis personalizados según sus necesidades.
 
 ## Finalidad del Proyecto
@@ -107,34 +106,40 @@ El sistema está diseñado utilizando una arquitectura basada en contenedores, l
 La estructura de directorios del proyecto es la siguiente:
 
 ```plaintext
-.
-├── comandos.md
 ├── docker-compose.yaml
-├── docs
-│   ├── about.md
-│   ├── images
-│   └── index.md
 ├── emqx
 │   ├── config
-│   ├── data
+│   │   └── emqx_auth_mysql.conf
 │   └── Dockerfile
 ├── grafana
-│   ├── data
 │   ├── Dockerfile
 │   ├── grafana.conf
 │   └── secrets
+│       └── grafana_admin_password
 ├── influxdb
-│   ├── data
 │   └── Dockerfile
-├── init.sql
-├── mkdocs.yml
 ├── mysql
-│   ├── data
-│   └── Dockerfile
-├── README.md
-└── streamlitapp
-    ├── data_capture.py
-    └── data_processing.py
+│   ├── Dockerfile
+│   └── init.sql
+├── seguridad
+│   └── certs
+│       ├── ca.key
+│       ├── ca.pem
+│       ├── client.csr
+│       ├── client.key
+│       ├── client.pem
+│       ├── emqx.csr
+│       ├── emqx.key
+│       ├── emqx.pem
+│       └── openssl.cnf
+├── streamlitapp
+│   ├── app.py
+│   ├── Dockerfile
+│   └── requirements.txt
+└── telegraf
+    ├── data
+    │   └── telegraf.conf
+    └── Dockerfile
 ```
 
 Use the `getting_started.md` to get started.
