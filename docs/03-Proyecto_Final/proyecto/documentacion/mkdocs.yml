@@ -7,7 +7,7 @@ nav:
   - Servidor:
     - Introduccion: intro_server.md
     - Telegraf: telegraf.md
-    - Seguridad: conf_seguridad.md
+    - Seguridad EMQX: conf_seguridad.md
     - Influx DB: influxdb.md
     - Grafana: grafana.md
     - Streamlit: Streamlit.md
