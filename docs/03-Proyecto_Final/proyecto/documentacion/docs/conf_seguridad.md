@@ -99,6 +99,7 @@ Verificamos que nadie usa ese puerto con:
 ```bash
 sudo lsof -i :3306
 ```
+en la siguiente imagen vemos como podemos publicar con la contraseña y usuario correctos y cómo sin ellos obtenemos mensaje de error.
 
  ![Dashboard EMQX](./images/p_a.png)
 
@@ -244,16 +245,40 @@ clave del cliente:
 ```bash
    openssl genrsa -out client.key 2048
 
+
 ```
 archivo de solicitud de cliente: 
 ```bash
-   openssl req -new -key client.key -out client.csr -subj "/C=CN/ST=Zhejiang/L=Hangzhou/O=EMQX/CN=client"
+   touch  openssl_client.cnf, luego con nano openssl_client.cnf incluyo el archivo que se muestra abajo:
+``` 
+```bash 
+   [req]
+default_bits = 2048
+prompt = no
+distinguished_name = req_distinguished_name
+req_extensions = req_ext
+
+[req_distinguished_name]
+countryName = ar
+stateOrProvinceName = cba
+localityName = rc
+organizationName = unrc
+commonName = Client
+
+[req_ext]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = client.example.com
 
 ```
+```bash 
+ openssl req -new -key client.key -out client.csr -config openssl_client.cnf
 
+```
 firmo y genero certificado de cliente: 
 ```bash
-   openssl x509 -req -days 3650 -in client.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out client.pem
+   openssl x509 -req -in client.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out client.pem -days 3650 -sha256 -extfile openssl.cnf -extensions req_ext
 
 ```
 #### configuracion del dashboard
@@ -261,12 +286,14 @@ Dentro de "Listeners" en la columna izquierda, selecciona el listener por defaul
 
 ![Dashboard EMQX](./images/lis.png)
 
-Cargo los archivos de encriptación en el siguiente orden: `emqx.pem`, `emqx.key`, `ca.pem`, luego presiona "Update".
+Cargo los archivos de encriptación en el siguiente orden: `emqx.pem`, `emqx.key`, `ca.pem`
+
+luego presiono "Update".
 
 ![Dashboard EMQX](./images/copy.png)
 
  y pongo Force Verify Peer Certificate en true y habilito verify Peer
 ## Pruebas
 ![Dashboard EMQX](./images/p_c.png)
-![Dashboard EMQX](./images/handshake.png)
+![Dashboard EMQX](./images/pruebas_certificados_definitiva.png)
 
