@@ -77,6 +77,9 @@ def connect_mqtt():
 
 Mediante la funcion `get_cpu_temp()` se realiza la lectura de la temperatura del CPU de la Raspberry Pi 2. Para ello se utiliza el metodo `sensor_temperatures()` de la libreria psutil y se lo regresa como un valor entero.
 
+*(Nota: en caso de utilizar el codigo en un sistema operativo Linux distinto a Raspberry PI OS, se debe modificar el nombre del sensor el cual se quiere leer (`cpu_thermal`) por el nombre correspondiente.)*
+
+
 ```bash
 def get_cpu_temp():
     temp = psutil.sensors_temperatures()['cpu_thermal'][0].current
