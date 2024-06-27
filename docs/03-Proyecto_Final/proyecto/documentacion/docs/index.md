@@ -23,31 +23,43 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="about.md">Sobre este proyecto</a>
-      <ul>
-        <li><a href="about.md#built-with">Built With</a></li>
+  <summary style="font-size: 1.2em; font-weight: bold;">Table of Contents</summary>
+  <ol style="list-style-type: none; padding-left: 1em;">
+    <li style="margin-top: 0.5em;">
+      <a href="about" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Sobre este proyecto</a>
+      <ul style="list-style-type: disc; padding-left: 1.5em;">
+        <li><a href="about/#introduccion" style="text-decoration: none; color: #3498db;">Introducción</a></li>
+        <li>
+          <a href="about/#marco-teorico" style="text-decoration: none; color: #3498db;">Marco Teórico</a>
+          <ul style="list-style-type: circle; padding-left: 1.5em;">
+            <li><a href="about/#internet-of-things-iot" style="text-decoration: none; color: #2980b9;">Internet of Things</a></li>
+            <li><a href="about/#mqtt-message-queuing-telemetry-transport" style="text-decoration: none; color: #2980b9;">MQTT</a></li>
+          </ul>
+        </li>
+        <li><a href="about/#componentes-del-proyecto" style="text-decoration: none; color: #3498db;">Componentes</a></li>
+        <li><a href="about/#finalidad-del-proyecto" style="text-decoration: none; color: #3498db;">Finalidad</a></li>
+        <li><a href="about/#arquitectura-del-sistema" style="text-decoration: none; color: #3498db;">Arquitectura</a></li>
+        <li><a href="about/#estructura-del-proyecto" style="text-decoration: none; color: #3498db;">Estructura</a></li>
       </ul>
     </li>
-    <li>
-      <a href="getting-started.md">Getting Started</a>
-      <ul>
-        <li><a href="getting-started.md#prerequisites">Prerequisites</a></li>
-        <li><a href="getting-started.md#installation">Installation</a></li>
+    <li style="margin-top: 0.5em;">
+      <a href="getting_started" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Getting Started</a>
+      <ul style="list-style-type: disc; padding-left: 1.5em;">
+        <li><a href="getting_started/#prerequisites" style="text-decoration: none; color: #3498db;">Prerequisites</a></li>
+        <li><a href="getting_started/#installation" style="text-decoration: none; color: #3498db;">Installation</a></li>
       </ul>
     </li>
-    <li><a href="usage.md">Usage</a></li>
-    <li><a href="roadmap.md">Roadmap</a></li>
-    <li><a href="contributing.md">Contributing</a></li>
-    <li><a href="license.md">License</a></li>
-    <li><a href="contact.md">Contact</a></li>
-    <li><a href="acknowledgments.md">Acknowledgments</a></li>
+    <li style="margin-top: 0.5em;"><a href="intro_server" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Introducción al servidor</a></li>
+    <li style="margin-top: 0.5em;"><a href="docker" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Docker Compose</a></li>
+    <li style="margin-top: 0.5em;"><a href="telegraf" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Telegraf</a></li>
+    <li style="margin-top: 0.5em;"><a href="conf_seguridad" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Seguridad EMQX</a></li>
+    <li style="margin-top: 0.5em;"><a href="influxdb" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Influx DB</a></li>
+    <li style="margin-top: 0.5em;"><a href="grafana" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Grafana</a></li>
+    <li style="margin-top: 0.5em;"><a href="Streamlit" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Streamlit</a></li>
   </ol>
 </details>
-
 <!-- End of Table of Contents -->
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
