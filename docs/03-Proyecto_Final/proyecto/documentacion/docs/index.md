@@ -15,7 +15,7 @@
 
   <p align="center">
     <br />
-    <a href="https://github.com/danunziata/Aplicaciones_TCP_IP"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/danunziata/Aplicaciones_TCP_IP"><strong>Explore the repository »</strong></a>
     <br />
   </p>
 </div>
