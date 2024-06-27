@@ -26,7 +26,7 @@ Para poder compilar y ejecutar el siguiente codigo, es necesario contar con una 
 
 ## Implementacion y ejecucion
 
-Modificar los valores de las variables `broker`, `port`, `topic`, `client_id`, `username` y `password` dentro del archivo python `raspymain.py` con los valores correspondientes.
+Modificar los valores de las variables `broker`, `port`, `topic`, `client_id`, `username` y `password` dentro del archivo python `raspymain.py` o `cputemp.py`, segun corresponda, con los valores correspondientes.
 Dentro de un terminal, situarse en la misma direccion en la que se encuentra el archivo antes mencionado. Luego, ejecutar el script utilizando el siguiente comando:
 
 `python3 raspymain.py`
