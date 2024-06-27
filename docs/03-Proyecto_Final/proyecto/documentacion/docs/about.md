@@ -4,6 +4,7 @@
   <img src="/images/diaginicial.png" alt="Diagrama" width="600"/>
 </p>
 (esto es la parte del servidor, todavía no está terminado)
+
 ## Introducción
 
 El presente proyecto tiene como objetivo construir un entorno de trabajo integrado para la recolección, almacenamiento, análisis y visualización de datos provenientes de dispositivos IoT (Internet of Things). Utilizando una arquitectura basada en contenedores y tecnologías de código abierto, se busca facilitar la gestión eficiente y segura de grandes volúmenes de datos en tiempo real. A continuación, se presenta una descripción detallada de cada componente utilizado en este proyecto y su papel dentro del sistema.
