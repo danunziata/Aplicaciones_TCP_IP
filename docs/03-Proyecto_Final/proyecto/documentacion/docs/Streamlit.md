@@ -23,7 +23,7 @@ EXPOSE 8501
 # Comando para ejecutar la aplicación
 CMD ["streamlit", "run", "app.py"]
 ``` 
-Este archivo se encuentra en: /streamlitapp/Dockerfile
+Este archivo se encuentra en: `/streamlitapp/Dockerfile`
 
 ## docker-compose.yaml
 La configuración de docker-compose.yaml para el servicio de Streamlit se detalla a continuación. Este servicio se construye a partir del Dockerfile y utiliza variables de entorno para la configuración de la conexión a InfluxDB.
@@ -40,26 +40,26 @@ streamlit:
     INFLUXDB_BUCKET: your_bucket
 ```
 
-Este archivo se encuentra en: docker-compose.yaml
+Este archivo se encuentra en: [docker-compose.yaml](https://github.com/danunziata/Aplicaciones_TCP_IP/blob/develop/docs/03-Proyecto_Final/proyecto/server/docker-compose.yaml)
 
 Explicación de la Configuración
-build: Especifica la ruta al directorio que contiene el Dockerfile de la aplicación Streamlit.
-ports: Expone el puerto 8501 del contenedor para que la aplicación sea accesible desde el host.
+- build: Especifica la ruta al directorio que contiene el Dockerfile de la aplicación Streamlit.
+- ports: Expone el puerto 8501 del contenedor para que la aplicación sea accesible desde el host.
 environment: Configura las variables de entorno necesarias para la conexión a InfluxDB.
 
 ## Requisitos
 El archivo requirements.txt contiene las dependencias necesarias para la aplicación:
 
--streamlit
--pandas
--plotly
--influxdb-client
+- streamlit
+- pandas
+- plotly
+- influxdb-client
 
 ## Código de la Aplicación
-El archivo principal de la aplicación es app.py, el cual contiene el código para conectarse a InfluxDB, realizar consultas y visualizar los datos.
+El archivo principal de la aplicación es `app.py`, el cual contiene el código para conectarse a InfluxDB, realizar consultas y visualizar los datos.
 
 ### Conexión a InfluxDB y Configuración
-La conexión a InfluxDB se realiza utilizando las variables de entorno configuradas en docker-compose.yaml. tambien se pueden configurar directamente en app.py
+La conexión a InfluxDB se realiza utilizando las variables de entorno configuradas en `docker-compose.yam`. También se pueden configurar directamente en `app.py`.
 
 ```python
 import os
@@ -79,7 +79,7 @@ client = InfluxDBClient(url=url, token=token, org=org)
 query_api = client.query_api()
 ```
 ### Definición de Opciones de Datos
-Las opciones de datos están predefinidas para facilitar la selección y visualización de diferentes métricas. para otro tipo de sensores deberas editar los valores "field" y "measurment" para cada uno de tus tipos de datos, para esta implementacion son los siguientes:
+Las opciones de datos están predefinidas para facilitar la selección y visualización de diferentes métricas. Para otro tipo de sensores deberás editar los valores "field" y "measurment" para cada uno de tus tipos de datos. Para esta implementación son los siguientes:
 
 ```python
 
@@ -97,7 +97,6 @@ data_options = {
 La consulta Flux se construye dinámicamente en función de la selección del usuario y se ejecuta para obtener los datos desde InfluxDB.
 
 ```python
-Copiar código
 # Sidebar para selección de tipo de dato
 st.sidebar.header("Seleccionar Tipo de Dato")
 option = st.sidebar.selectbox("Selecciona el tipo de dato:", list(data_options.keys()))
@@ -144,7 +143,7 @@ else:
     st.warning(f"No se encontraron datos para {option} en el período seleccionado.")
 ```
 ### Integración con InfluxDB
-La aplicación Streamlit se conecta a InfluxDB utilizando los parámetros configurados en docker-compose.yaml. A través de consultas Flux, extrae los datos necesarios y los visualiza de manera interactiva. 
+La aplicación Streamlit se conecta a InfluxDB utilizando los parámetros configurados en `docker-compose.yaml`. A través de consultas Flux, extrae los datos necesarios y los permite visualizar de manera interactiva. 
 
 ### Resumen
 Esta configuración asegura que la aplicación Streamlit esté correctamente preparada para visualizar y analizar los datos almacenados en InfluxDB. Utilizando Docker y Docker Compose, se puede desplegar fácilmente la aplicación junto con su entorno de bases de datos, facilitando la gestión y escalabilidad del sistema. La interfaz de Streamlit permite a los usuarios interactuar con los datos y obtener información valiosa de manera intuitiva y eficaz.

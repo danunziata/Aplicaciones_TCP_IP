@@ -10,7 +10,6 @@ services:
     volumes:
       - ./emqx/data/data:/opt/emqx/data
       - ./emqx/data/log:/opt/emqx/log
-      #- ./emqx/config/emqx_auth_mysql.conf:/opt/emqx/etc/plugins/emqx_auth_mysql.conf
 
   influxdb:
     build: ./influxdb

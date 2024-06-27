@@ -24,7 +24,7 @@ Proporciona soporte para MQTT, automatización, reglas y una interfaz web para c
 
 ## ¿Por qué utilizar Tasmota?
 
-El firmware original de Sonoff no incluye soporte para MQTT, una característica esencial para nuestro proyecto. Flashear Tasmota en el Sonoff POW V1 nos permite:
+El firmware original de Sonoff no incluye soporte configurable para MQTT, una característica esencial para nuestro proyecto. Flashear Tasmota en el Sonoff POW V1 nos permite:
 
 - Integrar el dispositivo con nuestro servidor MQTT.
 - Utilizar funciones avanzadas de control y monitoreo.
