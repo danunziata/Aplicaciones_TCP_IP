@@ -11,7 +11,7 @@ Es una base de datos, se utiliza para estructurar y organizar los datos. Estos d
 
 ### Tipo de Autenticación: basada en contraseña
 
-En esta sección, se implemento la autenticación para clientes MQTT utilizando nombre de usuario y contraseña, como se menciono anteriormente. Las contraseñas se almacenan de manera "hasheada". Esto significa que la contraseña se combina con el algoritmo SHA256 y se guarda en la base de datos como una cadena de caracteres, donde la contraseña original no es reconocible. Debido a que este proceso es unidireccional, no es matemáticamente posible recuperar la contraseña original a partir de los datos almacenados en la base de datos, incluso conociendo el algoritmo y el salt.
+En esta sección, se implemento la autenticación para clientes MQTT utilizando nombre de usuario y contraseña y salt. Las contraseñas se almacenan de manera "hasheada". Esto significa que la contraseña y el salt se combinan con el algoritmo SHA256 y se guarda el "hash" en la base de datos como una cadena de caracteres, donde la contraseña original no es reconocible. Debido a que este proceso es unidireccional, no es matemáticamente posible recuperar la contraseña original a partir de los datos almacenados en la base de datos.
 
 ## Configuración de Autenticación con MySQL
 
@@ -131,29 +131,41 @@ Como mencionamos en la introduccion el protocolo SSL/TLS consta de dos partes:
 
 ### Hanshake
 El "handshake" (apretón de manos)  se refiere al proceso mediante la cual el cliente y servidor establecen una conexión segura y autenticada antes de intercambiar datos. Sería una especie de "diálogo" entre ambos.
-    
- 1. El mensaje de "hola" del cliente": el cliente inicia el protocolo de enlace enviando un mensaje "hola" al servidor. El mensaje incluirá: versión de TLS que admite el cliente, los conjuntos de cifrado compatibles y una cadena de bytes aleatorios "cliente aleatorio".
- 2. El mensaje de "hola" del servidor": en respuesta al mensaje de hola del cliente, el servidor envía un mensaje que contiene el certificado del servidor (emqx.pem), el conjunto de cifrado elegido por este, y otra cadena aleatoria de bytes que genera el servidor "servidor aleatorio"
- 3. Solicitud de Certificado del Cliente:El servidor solicita al cliente que proporcione su certificado para autenticación.
- 4. El cliente envía su certificado al servidor, demostrando su identidad. (client.pem).
- 5. El cliente "verifica" el certificado del servidor (emqx.pem)
- 6. El servidor "verifica" el certificado del cliente (cliente.pem)
- 7. Secreto Premaster: El cliente utiliza su clave privada (cliente.key) para firmar digitalmente el secreto premaster antes de enviarlo. Uso: Asegura la autenticidad del cliente, garantizando que el mensaje viene efectivamente del cliente que posee el certificado.
- 8. Envió del Secreto Premaster:
-El cliente envía el secreto premaster cifrado al servidor.
-Uso: Asegura que solo el servidor puede descifrarlo utilizando su clave privada (emqx.key).
-9. Descifrado del Secreto Premaster:
-El servidor descifra el secreto premaster con su clave privada (emqx.key).
-10. Generación de Claves de Sesión:
-Tanto el cliente como el servidor generan claves de sesión a partir del cliente aleatorio, el servidor aleatorio y el secreto premaster.
-Ambas partes deberían llegar a las mismas claves de sesión.
-11. El cliente envía un mensaje "Terminado" cifrado con una clave de sesión, indicando que está listo.
-12. El servidor envía un mensaje "Terminado" cifrado con una clave de sesión, indicando que también está listo.
 
-Encriptación Simétrica:
-La comunicación continúa utilizando las claves de sesión para asegurar la confidencialidad e integridad de los datos.
+##### Parte 1
+Client Hello (Cliente Hola): Se inicia la comunicación, el cliente le dice al servidor qué versión de TLS soporta y cuáles métodos de cifrado puede usar.
 
-![Dashboard EMQX](./images/cifrado.png)
+##### Parte 2
+Server Hello (Servidor Hola): El servidor elige la mejor versión de TLS para usar (en este caso TLS 1.2) y el mejor método de cifrado compatible. Esta información se envía al cliente.
+
+Certificate (Certificado): El servidor envía su certificado al cliente para probar su identidad, este contiene su clave pública (emqx.pem).
+
+Certificate Request (Solicitud de Certificado): Esto se solicita para verificar la identidad del cliente, le pide un certificado (client.pem).
+
+Server Key Exchange (Intercambio de Claves del Servidor): El servidor envía información adicional para el intercambio de claves si es necesario. Esta información adicional se va a utilizar si es necesario para generar la clave simétrica que van a compartir ambos, que se detallará en los pasos siguientes.
+
+Server Hello Done (Servidor Hola Listo): El servidor le dice al cliente que ha terminado con los mensajes iniciales.
+
+##### Parte 3
+Certificate (Certificado): El cliente envía su certificado al servidor (cliente.pem), este contiene su clave pública.
+
+Client Key Exchange (Intercambio de Claves del Cliente): El cliente genera una clave secreta que se usará para el cifrado simétrico. Esta clave se encripta con la clave pública del servidor (emqx.pem) y se envía al servidor. El servidor desencripta esta clave secreta utilizando su clave privada (emqx.key). La clave simétrica generada es compartida entre el cliente y el servidor.
+
+Certificate Verify (Verificación del Certificado): Si el cliente envió un certificado, envía información firmada digitalmente con su clave privada (client.key) para que el servidor pueda verificar su identidad. El servidor utiliza la clave pública del cliente (cliente.pem), que se encuentra en el certificado del cliente, para desencriptar la información firmada digitalmente. La clave pública del cliente se utiliza para verificar que la firma digital fue creada con la clave privada correspondiente del cliente.
+
+Change Cipher Spec (Cambio de Especificación de Cifrado): El cliente le dice al servidor que cambie a modo cifrado.
+
+Finished (Finalizado): El cliente le dice al servidor que está listo para empezar a comunicarse de forma segura.
+
+Change Cipher Spec (Cambio de Especificación de Cifrado): El servidor le dice al cliente que cambie a modo cifrado.
+
+##### Parte 4
+El servidor le dice al cliente que está listo para empezar a comunicarse de forma segura. Aquí termina el proceso de negociación y se cambia al modo de encriptación. El servidor le envía un mensaje con la información Change Cipher Spec (Cambio de Especificación de Cifrado).
+
+##### Parte 5
+Encrypted Data (Datos Cifrados): El cliente y el servidor ahora se comunican usando cifrado simétrico, con la clave secreta acordada. Pueden renegociar el proceso de seguridad si es necesario.
+
+![Dashboard EMQX](./images/cif.png)
 
 ### Record
 
