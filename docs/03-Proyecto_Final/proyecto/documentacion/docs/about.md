@@ -1,9 +1,11 @@
 # Sobre este proyecto
 
+<div align="center">
+Esquema General
+
 <p align="center">
   <img src="/images/diaginicial.png" alt="Diagrama" width="600"/>
 </p>
-(esto es la parte del servidor, todavía no está terminado)
 
 ## Introducción
 
@@ -47,7 +49,7 @@ MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para l
   </div>
   <br />
   Telegraf es un agente de recopilación de métricas desarrollado por la empresa InfluxData. Es parte del conjunto de herramientas de InfluxDB, que también incluye InfluxDB (base de datos de series temporales), Chronograf (interfaz de usuario para la visualización) y Kapacitor (procesamiento de datos en tiempo real).
-  
+
   La configuración de Telegraf se realiza a través de un archivo de configuración (generalmente telegraf.conf), lo que permite una fácil personalización.
 
   Tiene un alto grado de compatibilidad, ya que puede integrarse con varios sistemas de almacenamiento y visualización de datos, como InfluxDB, Graphite, OpenTSDB, Prometheus, Datadog, AWS CloudWatch, entre otros.
@@ -77,7 +79,7 @@ MQTT es un protocolo de mensajería ligero y de bajo ancho de banda ideal para l
   <br />
 
   Grafana es una plataforma de análisis y monitoreo que permite la creación de paneles interactivos y visualizaciones en tiempo real. Soporta una amplia variedad de fuentes de datos, incluyendo InfluxDB, y proporciona herramientas avanzadas para el análisis de datos.
-  
+
   Esto permite a los usuarios monitorear el rendimiento y el estado de los dispositivos IoT, así como realizar análisis detallados de los datos recolectados.
 
 - **Streamlit**
