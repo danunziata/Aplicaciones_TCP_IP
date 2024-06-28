@@ -130,7 +130,7 @@ Este fue el tipo de certificacion elegida, la cual implica el intercambio entre 
 Como mencionamos en la introduccion el protocolo SSL/TLS consta de dos partes:
 
 ### Hanshake
-El "handshake" (apretón de manos)  se refiere al proceso mediante la cual el cliente y servidor establecen una conexión segura y autenticada antes de intercambiar datos. Sería una especie de "diálogo" entre ambos.
+El "handshake" (apretón de manos) es una negociación, un proceso mediante la cual el cliente y servidor establecen una conexión segura y autenticada antes de intercambiar datos. 
 
 ##### Parte 1
 Client Hello (Cliente Hola): Se inicia la comunicación, el cliente le dice al servidor qué versión de TLS soporta y cuáles métodos de cifrado puede usar.
