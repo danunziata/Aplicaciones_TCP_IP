@@ -51,6 +51,7 @@
     </li>
     <li style="margin-top: 0.5em;"><a href="intro_server" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Introducción al servidor</a></li>
     <li style="margin-top: 0.5em;"><a href="docker" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Docker Compose</a></li>
+    <li style="margin-top: 0.5em;"><a href="emqx" style="text-decoration: none; color: #2c3e50; font-weight: bold;">EMQX</a></li>
     <li style="margin-top: 0.5em;"><a href="telegraf" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Telegraf</a></li>
     <li style="margin-top: 0.5em;"><a href="conf_seguridad" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Seguridad EMQX</a></li>
     <li style="margin-top: 0.5em;"><a href="influxdb" style="text-decoration: none; color: #2c3e50; font-weight: bold;">Influx DB</a></li>
