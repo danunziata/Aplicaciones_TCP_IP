@@ -5,4 +5,4 @@
 - Pablo Solivellas
 
 ## Estudiantes
-- 
+- Manuel Magallanes @manumagallanes
