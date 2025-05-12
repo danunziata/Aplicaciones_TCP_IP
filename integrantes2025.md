@@ -16,4 +16,6 @@
 - Aaron Abdul @aaron4a
 - Valentin Mora @Valenchu92
 - Santiago Coassolo @CoassoloS
+- Ramiro Tizzian @ramirotizzian1
 - Lautaro Torletti @torlo23
+
