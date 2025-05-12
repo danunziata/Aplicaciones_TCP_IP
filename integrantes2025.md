@@ -10,9 +10,9 @@
 - Martina Valenzuela @Martii03
 - Matías Ponte @Ponte-Matias
 - Sebastian Laborda @LabordaSebastian
+- Valentin Milanesio @valemilanesio
 - Martín Lambrese @lambrese 
 - Damian Nuñez @damiangn
 - Aaron Abdul @aaron4a
 - Valentin Mora @Valenchu92
 - Santiago Coassolo @CoassoloS
-
