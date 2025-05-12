@@ -5,9 +5,8 @@
 - Pablo Solivellas
 
 ## Estudiantes
-
+- Joaquin Carpena Castro @JoaquinUsuario
 - Manuel Magallanes @manumagallanes
 - Martina Valenzuela @Martii03
 - Matías Ponte @Ponte-Matias
-- Sebastian Laborda @LabordaSebastian 
-
+- Sebastian Laborda @LabordaSebastian
