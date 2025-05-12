@@ -11,3 +11,6 @@
 - Matías Ponte @Ponte-Matias
 - Sebastian Laborda @LabordaSebastian
 - Aaron Abdul @aaron4a
+- Valentin Mora @Valenchu92
+- Santiago Coassolo @CoassoloS
+
