@@ -10,3 +10,4 @@
 - Martina Valenzuela @Martii03
 - Matías Ponte @Ponte-Matias
 - Sebastian Laborda @LabordaSebastian
+- Aaron Abdul @aaron4a
