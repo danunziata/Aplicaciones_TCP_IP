@@ -73,7 +73,7 @@
 > Seleccioná las áreas en las que te gustaría participar o aprender más durante el proyecto:
 
 - [x] IoT Edge (captura/envío de datos)
-- [] Backend y bases de datos
+- [x] Backend y bases de datos
 - [x] Visualización de datos / dashboards
 - [x] DevOps e infraestructura
 - [ ] Documentación, testing, coordinación
