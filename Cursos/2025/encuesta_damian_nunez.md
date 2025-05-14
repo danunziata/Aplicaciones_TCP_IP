@@ -1,8 +1,8 @@
 # 🧠 Autoevaluación de Habilidades Técnicas
 
-**Nombre y Apellido:**  
-**Correo institucional:**  
-**GitHub (usuario):**  
+**Nombre y Apellido:**  Damian Nuñez
+**Correo institucional:**  damiangn.53@gmail.com
+**GitHub (usuario):**  damiangn
 
 ## Escala de valoración (escribir un número del 1 al 5)
 
@@ -18,11 +18,11 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Python | |
-| MicroPython | |
-| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) | |
-| Comunicación con MQTT | |
-| Manejo de estructuras JSON | |
+| Python |4 |
+| MicroPython |1 |
+| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) |3 |
+| Comunicación con MQTT |3 |
+| Manejo de estructuras JSON |3 |
 
 ---
 
@@ -30,11 +30,11 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Docker | |
-| Docker Compose | |
-| Configuración de Mosquitto / EMQX | |
-| InfluxDB (consulta / inserción) | |
-| Telegraf (configuración y uso) | |
+| Docker |4 |
+| Docker Compose |4 |
+| Configuración de Mosquitto / EMQX |3 |
+| InfluxDB (consulta / inserción) |3 |
+| Telegraf (configuración y uso) |3 |
 
 ---
 
@@ -42,9 +42,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Grafana | |
-| Streamlit | |
-| Python para gráficos (matplotlib / plotly) | |
+| Grafana |3 |
+| Streamlit |2 |
+| Python para gráficos (matplotlib / plotly) |4 |
 
 ---
 
@@ -52,9 +52,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Git y GitHub | |
-| Seguridad en MQTT (usuarios, TLS, claves) | |
-| Automatización con scripts o pipelines | |
+| Git y GitHub |4 |
+| Seguridad en MQTT (usuarios, TLS, claves) |2 |
+| Automatización con scripts o pipelines |2 |
 
 ---
 
@@ -63,8 +63,8 @@
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
 | Redacción en Markdown |4 |
-| Uso de issues y proyectos en GitHub | |
-| Trabajo colaborativo (Scrum, Kanban) | |
+| Uso de issues y proyectos en GitHub |2 |
+| Trabajo colaborativo (Scrum, Kanban) |1 |
 
 ---
 
