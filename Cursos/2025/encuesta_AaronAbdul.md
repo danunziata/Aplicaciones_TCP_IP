@@ -52,9 +52,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Git y GitHub | |
-| Seguridad en MQTT (usuarios, TLS, claves) | |
-| Automatización con scripts o pipelines | |
+| Git y GitHub |2|
+| Seguridad en MQTT (usuarios, TLS, claves) |1|
+| Automatización con scripts o pipelines |4|
 
 ---
 
