@@ -1,8 +1,8 @@
 # 🧠 Autoevaluación de Habilidades Técnicas
 
-**Nombre y Apellido: Oscar Maximiliano Novisardi**  
-**Correo institucional: maxinovisardi@gmail.com**  
-**GitHub (usuario): MaxiNovisardi**  
+**Nombre y Apellido:**  
+**Correo institucional:**  
+**GitHub (usuario):**  
 
 ## Escala de valoración (escribir un número del 1 al 5)
 
@@ -18,11 +18,11 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Python | 4 |
-| MicroPython | 2|
-| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) |1 |
-| Comunicación con MQTT | 3|
-| Manejo de estructuras JSON | 4|
+| Python |4|
+| MicroPython |2|
+| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) |1|
+| Comunicación con MQTT |3|
+| Manejo de estructuras JSON |4|
 
 ---
 
@@ -30,11 +30,11 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Docker | 4|
-| Docker Compose |3 |
-| Configuración de Mosquitto / EMQX |3 |
-| InfluxDB (consulta / inserción) | 2|
-| Telegraf (configuración y uso) | 2|
+| Docker |4|
+| Docker Compose |3|
+| Configuración de Mosquitto / EMQX |3|
+| InfluxDB (consulta / inserción) |2|
+| Telegraf (configuración y uso) |3|
 
 ---
 
@@ -42,9 +42,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Grafana | 4|
-| Streamlit |3 |
-| Python para gráficos (matplotlib / plotly) | 4|
+| Grafana |4|
+| Streamlit |2|
+| Python para gráficos (matplotlib / plotly) |4|
 
 ---
 
@@ -52,9 +52,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Git y GitHub | 3|
-| Seguridad en MQTT (usuarios, TLS, claves) |1 |
-| Automatización con scripts o pipelines | 2|
+| Git y GitHub |3|
+| Seguridad en MQTT (usuarios, TLS, claves) |1|
+| Automatización con scripts o pipelines |3|
 
 ---
 
@@ -62,9 +62,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Redacción en Markdown |2 |
-| Uso de issues y proyectos en GitHub |1 |
-| Trabajo colaborativo (Scrum, Kanban) |2 |
+| Redacción en Markdown |4|
+| Uso de issues y proyectos en GitHub |1|
+| Trabajo colaborativo (Scrum, Kanban) |1|
 
 ---
 
@@ -73,8 +73,8 @@
 > Seleccioná las áreas en las que te gustaría participar o aprender más durante el proyecto:
 
 - [x] IoT Edge (captura/envío de datos)
-- [x] Backend y bases de datos
-- [ ] Visualización de datos / dashboards
+- [] Backend y bases de datos
+- [x] Visualización de datos / dashboards
 - [x] DevOps e infraestructura
 - [ ] Documentación, testing, coordinación
 
