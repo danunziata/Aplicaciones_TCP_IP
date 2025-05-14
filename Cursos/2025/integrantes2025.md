@@ -18,4 +18,5 @@
 - Santiago Coassolo @CoassoloS
 - Ramiro Tizzian @ramirotizzian1
 - Lautaro Torletti @torlo23
+- Oscar Maximiliano Novisardi @MaxiNovisardi
 
