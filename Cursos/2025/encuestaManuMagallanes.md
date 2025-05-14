@@ -1,8 +1,8 @@
 # 🧠 Autoevaluación de Habilidades Técnicas
 
-**Nombre y Apellido: Manuel Magallanes**  
-**Correo institucional: mmagallanes@ing.unrc.edu.ar**  
-**GitHub (usuario): manumagallanes**  
+**Nombre y Apellido: Oscar Maximiliano Novisardi**  
+**Correo institucional: maxinovisardi@gmail.com**  
+**GitHub (usuario): MaxiNovisardi**  
 
 ## Escala de valoración (escribir un número del 1 al 5)
 
@@ -18,11 +18,11 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Python | 4   |
+| Python | 4 |
 | MicroPython | 2|
-| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) | 1|
-| Comunicación con MQTT |3 |
-| Manejo de estructuras JSON |4 |
+| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) |1 |
+| Comunicación con MQTT | 3|
+| Manejo de estructuras JSON | 4|
 
 ---
 
@@ -31,9 +31,9 @@
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
 | Docker | 4|
-| Docker Compose | 3 |
-| Configuración de Mosquitto / EMQX | 3  |
-| InfluxDB (consulta / inserción) | 2 |
+| Docker Compose |3 |
+| Configuración de Mosquitto / EMQX |3 |
+| InfluxDB (consulta / inserción) | 2|
 | Telegraf (configuración y uso) | 2|
 
 ---
@@ -43,7 +43,7 @@
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
 | Grafana | 4|
-| Streamlit | 3|
+| Streamlit |3 |
 | Python para gráficos (matplotlib / plotly) | 4|
 
 ---
@@ -53,7 +53,7 @@
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
 | Git y GitHub | 3|
-| Seguridad en MQTT (usuarios, TLS, claves) | 1|
+| Seguridad en MQTT (usuarios, TLS, claves) |1 |
 | Automatización con scripts o pipelines | 2|
 
 ---
@@ -62,9 +62,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Redacción en Markdown | 2|
-| Uso de issues y proyectos en GitHub | 1|
-| Trabajo colaborativo (Scrum, Kanban) | 2|
+| Redacción en Markdown |2 |
+| Uso de issues y proyectos en GitHub |1 |
+| Trabajo colaborativo (Scrum, Kanban) |2 |
 
 ---
 
