@@ -35,17 +35,11 @@
   
 
 | Habilidad | Nivel (1-5) |
-
 |----------|--------------|
-
 | Python | 3 |
-
 | MicroPython | 2 |
-
 | Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) | 2 |
-
 | Comunicación con MQTT | 2 |
-
 | Manejo de estructuras JSON | 3 |
 
   
@@ -59,17 +53,11 @@
   
 
 | Habilidad | Nivel (1-5) |
-
 |----------|--------------|
-
 | Docker | 4 |
-
 | Docker Compose | 4 |
-
 | Configuración de Mosquitto / EMQX | 3 |
-
 | InfluxDB (consulta / inserción) | 2 |
-
 | Telegraf (configuración y uso) | 2 |
 
   
@@ -83,13 +71,9 @@
   
 
 | Habilidad | Nivel (1-5) |
-
 |----------|--------------|
-
 | Grafana | 3 |
-
 | Streamlit | 3 |
-
 | Python para gráficos (matplotlib / plotly) | 4 |
 
   
@@ -103,13 +87,9 @@
   
 
 | Habilidad | Nivel (1-5) |
-
 |----------|--------------|
-
 | Git y GitHub | 4 |
-
 | Seguridad en MQTT (usuarios, TLS, claves) | 2 |
-
 | Automatización con scripts o pipelines | 3 |
 
   
@@ -123,13 +103,9 @@
   
 
 | Habilidad | Nivel (1-5) |
-
 |----------|--------------|
-
 | Redacción en Markdown | 3 |
-
 | Uso de issues y proyectos en GitHub | 2 |
-
 | Trabajo colaborativo (Scrum, Kanban) | 2 |
 
   
