@@ -3,7 +3,6 @@
 **Nombre y Apellido:**  
 **Correo institucional:**  
 **GitHub (usuario):**  
-**Fecha:**  
 
 ## Escala de valoración (escribir un número del 1 al 5)
 
