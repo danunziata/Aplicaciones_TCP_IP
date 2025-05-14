@@ -18,7 +18,7 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Python | 4  |
+| Python | 4   |
 | MicroPython | 2|
 | Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) | 1|
 | Comunicación con MQTT |3 |
