@@ -1,8 +1,8 @@
 # 🧠 Autoevaluación de Habilidades Técnicas
 
-**Nombre y Apellido:**  
-**Correo institucional:**  
-**GitHub (usuario):**  
+**Nombre y Apellido: Aaron Abdul**  
+**Correo institucional: abdul.aaron3@gmail.com**  
+**GitHub (usuario): @aaron4a**  
 
 ## Escala de valoración (escribir un número del 1 al 5)
 
@@ -18,11 +18,11 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Python | |
-| MicroPython | |
-| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) | |
-| Comunicación con MQTT | |
-| Manejo de estructuras JSON | |
+| Python |4|
+| MicroPython |2|
+| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) |3|
+| Comunicación con MQTT |3|
+| Manejo de estructuras JSON |4|
 
 ---
 
@@ -30,11 +30,11 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Docker | |
-| Docker Compose | |
-| Configuración de Mosquitto / EMQX | |
-| InfluxDB (consulta / inserción) | |
-| Telegraf (configuración y uso) | |
+| Docker |4|
+| Docker Compose |3|
+| Configuración de Mosquitto / EMQX |3|
+| InfluxDB (consulta / inserción) |2|
+| Telegraf (configuración y uso) |2|
 
 ---
 
@@ -42,9 +42,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Grafana | |
-| Streamlit | |
-| Python para gráficos (matplotlib / plotly) | |
+| Grafana |4|
+| Streamlit |2|
+| Python para gráficos (matplotlib / plotly) |5|
 
 ---
 
@@ -62,9 +62,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Redacción en Markdown | |
-| Uso de issues y proyectos en GitHub | |
-| Trabajo colaborativo (Scrum, Kanban) | |
+| Redacción en Markdown |3|
+| Uso de issues y proyectos en GitHub |2|
+| Trabajo colaborativo (Scrum, Kanban) |1|
 
 ---
 
@@ -77,4 +77,3 @@
 - [ ] Visualización de datos / dashboards
 - [x] DevOps e infraestructura
 - [ ] Documentación, testing, coordinación
-

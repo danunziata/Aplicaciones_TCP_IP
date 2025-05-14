@@ -1,8 +1,8 @@
 # 🧠 Autoevaluación de Habilidades Técnicas
 
-**Nombre y Apellido:**  
-**Correo institucional:**  
-**GitHub (usuario):**  
+**Nombre y Apellido: Valentin Milanesio**  
+**Correo institucional: valemilanesio@gmail.com**  
+**GitHub (usuario): valemilanesio**  
 
 ## Escala de valoración (escribir un número del 1 al 5)
 
@@ -18,11 +18,11 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Python | |
-| MicroPython | |
-| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) | |
-| Comunicación con MQTT | |
-| Manejo de estructuras JSON | |
+| Python | 5 |
+| MicroPython | 1 |
+| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) | 1 |
+| Comunicación con MQTT | 3 |
+| Manejo de estructuras JSON | 4 |
 
 ---
 
@@ -30,11 +30,11 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Docker | |
-| Docker Compose | |
-| Configuración de Mosquitto / EMQX | |
-| InfluxDB (consulta / inserción) | |
-| Telegraf (configuración y uso) | |
+| Docker | 3 |
+| Docker Compose | 3 |
+| Configuración de Mosquitto / EMQX | 3 |
+| InfluxDB (consulta / inserción) | 2 |
+| Telegraf (configuración y uso) | 2 |
 
 ---
 
@@ -42,9 +42,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Grafana | |
-| Streamlit | |
-| Python para gráficos (matplotlib / plotly) | |
+| Grafana | 4 |
+| Streamlit | 3 |
+| Python para gráficos (matplotlib / plotly) | 4 |
 
 ---
 
@@ -52,9 +52,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Git y GitHub | |
-| Seguridad en MQTT (usuarios, TLS, claves) | |
-| Automatización con scripts o pipelines | |
+| Git y GitHub | 3 |
+| Seguridad en MQTT (usuarios, TLS, claves) | 1 |
+| Automatización con scripts o pipelines | 2 |
 
 ---
 
@@ -62,9 +62,9 @@
 
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
-| Redacción en Markdown | |
-| Uso de issues y proyectos en GitHub | |
-| Trabajo colaborativo (Scrum, Kanban) | |
+| Redacción en Markdown | 2 |
+| Uso de issues y proyectos en GitHub | 1 |
+| Trabajo colaborativo (Scrum, Kanban) | 1 |
 
 ---
 
