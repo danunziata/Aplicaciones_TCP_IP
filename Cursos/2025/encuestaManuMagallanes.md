@@ -1,8 +1,8 @@
 # 🧠 Autoevaluación de Habilidades Técnicas
 
-**Nombre y Apellido: Oscar Maximiliano Novisardi**  
-**Correo institucional: maxinovisardi@gmail.com**  
-**GitHub (usuario): MaxiNovisardi**  
+**Nombre y Apellido: Manuel Magallanes**  
+**Correo institucional: manumagallanes0@gmail.com**  
+**GitHub (usuario): manumagallanes**  
 
 ## Escala de valoración (escribir un número del 1 al 5)
 
