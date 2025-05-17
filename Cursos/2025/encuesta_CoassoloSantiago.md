@@ -1,8 +1,8 @@
 # 🧠 Autoevaluación de Habilidades Técnicas
 
-**Nombre y Apellido:**  Damian Nuñez
-**Correo institucional:**  damiangn.53@gmail.com
-**GitHub (usuario):**  damiangn
+**Nombre y Apellido:**  Santiago Coassolo
+**Correo institucional:**  coasssolo@gmail.com
+**GitHub (usuario):**  CoassoloS
 
 ## Escala de valoración (escribir un número del 1 al 5)
 
@@ -19,8 +19,8 @@
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
 | Python |4 |
-| MicroPython |1 |
-| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) |3 |
+| MicroPython |2 |
+| Lectura de sensores físicos (DHT11, DHT22, SCT013, etc.) |2 |
 | Comunicación con MQTT |3 |
 | Manejo de estructuras JSON |3 |
 
@@ -33,7 +33,7 @@
 | Docker |4 |
 | Docker Compose |4 |
 | Configuración de Mosquitto / EMQX |3 |
-| InfluxDB (consulta / inserción) |3 |
+| InfluxDB (consulta / inserción) |4 |
 | Telegraf (configuración y uso) |3 |
 
 ---
@@ -43,7 +43,7 @@
 | Habilidad | Nivel (1-5) |
 |----------|--------------|
 | Grafana |3 |
-| Streamlit |2 |
+| Streamlit |3 |
 | Python para gráficos (matplotlib / plotly) |4 |
 
 ---
@@ -54,7 +54,7 @@
 |----------|--------------|
 | Git y GitHub |4 |
 | Seguridad en MQTT (usuarios, TLS, claves) |2 |
-| Automatización con scripts o pipelines |2 |
+| Automatización con scripts o pipelines |3 |
 
 ---
 
@@ -74,7 +74,7 @@
 
 - [x] IoT Edge (captura/envío de datos)
 - [x] Backend y bases de datos
-- [x] Visualización de datos / dashboards
+- [ ] Visualización de datos / dashboards
 - [x] DevOps e infraestructura
-- [ ] Documentación, testing, coordinación
+- [x] Documentación, testing, coordinación
 
